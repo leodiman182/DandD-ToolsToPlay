@@ -5,21 +5,21 @@
 ### Projeto utilizando a API https://www.dnd5eapi.co/docs/#intro
 
 1. Landing Page: 
-* [] - Criar um header contendo titulo da página;
-* [] - Texto explicando o propósito do site;
-* [] - Botão para entrar na página principal do site;
-* [] - Footer com o nome dos desenvolvedores;
+* [ ] - Criar um header contendo titulo da página;
+* [ ] - Texto explicando o propósito do site;
+* [ ] - Botão para entrar na página principal do site;
+* [ ] - Footer com o nome dos desenvolvedores;
     
 2. Main Page:
-    [ ] -> Manter o header da página principal e adicionar um navigation para a página;
-    [ ] -> Navigation deve ter inicialmente link para as seções:
-        [ ] - About
-        [ ] - Library
-        [ ] - Create Character
-        [ ] - Roll Your Dices
-        [ ] - Your Characters;
-    [ ] -> Criar na página as informações necessárias e acessar via rolagem ou clicando nas abas dos navegation;
-    [ ] -> Manter o footer com o nome dos desenvolvedores;
+* [ ] -> Manter o header da página principal e adicionar um navigation para a página;
+* [ ] -> Navigation deve ter inicialmente link para as seções:
+1. [ ] - About
+2. [ ] - Library
+3. [ ] - Create Character
+4. [ ] - Roll Your Dices
+5. [ ] - Your Characters;
+* [ ] -> Criar na página as informações necessárias e acessar via rolagem ou clicando nas abas dos navegation;
+* [ ] -> Manter o footer com o nome dos desenvolvedores;
 
 3. About:
     [ ] -> Criar o conteúdo de como usar a página e seu propósito;
