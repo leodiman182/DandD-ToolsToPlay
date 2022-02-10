@@ -13,11 +13,11 @@
 2. Main Page:
 * [ ] -> Manter o header da página principal e adicionar um navigation para a página;
 * [ ] -> Navigation deve ter inicialmente link para as seções:
-1. [ ] - About
-2. [ ] - Library
-3. [ ] - Create Character
-4. [ ] - Roll Your Dices
-5. [ ] - Your Characters;
+    1. [ ] - About
+    2. [ ] - Library
+    3. [ ] - Create Character
+    4. [ ] - Roll Your Dices
+    5. [ ] - Your Characters;
 * [ ] -> Criar na página as informações necessárias e acessar via rolagem ou clicando nas abas dos navegation;
 * [ ] -> Manter o footer com o nome dos desenvolvedores;
 
