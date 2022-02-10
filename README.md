@@ -22,23 +22,23 @@
 * [ ] -> Manter o footer com o nome dos desenvolvedores;
 
 3. About:
-    [ ] -> Criar o conteúdo de como usar a página e seu propósito;
-    [ ] -> Background igual ao da main;
+* [ ] -> Criar o conteúdo de como usar a página e seu propósito;
+* [ ] -> Background igual ao da main;
 
 4. Create Character:
-    [ ] -> Rola a página até a área de criar o personagem;
-    [ ] -> Criar botão na região acessada na rolagem acima para acessar a tela de criar a ficha do personagem;
-    [ ] -> Formatar o formulário da ficha do personagem o mais similar possível a ficah do DnD 5th;
-    [ ] -> Criar ao fim do formulário botão para salvar a ficha;
+* [ ] -> Rola a página até a área de criar o personagem;
+* [ ] -> Criar botão na região acessada na rolagem acima para acessar a tela de criar a ficha do personagem;
+* [ ] -> Formatar o formulário da ficha do personagem o mais similar possível a ficah do DnD 5th;
+* [ ] -> Criar ao fim do formulário botão para salvar a ficha;
     
 5. Roll Your Dices:
-    [ ] -> Adicionar região onde a rolagem será mostrada;
-    [ ] -> Adicionar opções de escolhas de qual dado irá rolar;
-    [ ] -> Adicionar botão para rolagem de dados;
-    [ ] -> Poder rolar mais de 1 dado por vez;
+* [ ] -> Adicionar região onde a rolagem será mostrada;
+* [ ] -> Adicionar opções de escolhas de qual dado irá rolar;
+* [ ] -> Adicionar botão para rolagem de dados;
+* [ ] -> Poder rolar mais de 1 dado por vez;
     
 6. Your Characters:
-    [ ] -> Guardar ficha no local storage linkado com botão de create character;
-    [ ] -> Criar botão para imprimir ficha em PDF;
+* [ ] -> Guardar ficha no local storage linkado com botão de create character;
+* [ ] -> Criar botão para imprimir ficha em PDF;
     
 7. Library:
