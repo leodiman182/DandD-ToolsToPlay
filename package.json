@@ -1,0 +1,23 @@
+{
+  "name": "dandd-toolstoplay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leodiman182/DandD-ToolsToPlay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leodiman182/DandD-ToolsToPlay/issues"
+  },
+  "homepage": "https://github.com/leodiman182/DandD-ToolsToPlay#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
