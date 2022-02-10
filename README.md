@@ -5,10 +5,10 @@
 ### Projeto utilizando a API https://www.dnd5eapi.co/docs/#intro
 
 1. Landing Page: 
-* [x] - Criar um header contendo titulo da página;
-* [ ] - Texto explicando o propósito do site;
-    [ ] - Botão para entrar na página principal do site;
-    [ ] - Footer com o nome dos desenvolvedores;
+* [] - Criar um header contendo titulo da página;
+* [] - Texto explicando o propósito do site;
+* [] - Botão para entrar na página principal do site;
+* [] - Footer com o nome dos desenvolvedores;
     
 2. Main Page:
     [ ] -> Manter o header da página principal e adicionar um navigation para a página;
