@@ -49,8 +49,10 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.600);
-    width: 50%;
-    padding: 30px 50px 40px 50px;
+    width: 80%;
+    padding: 0px 10px 20px 10px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .main-section {
@@ -128,4 +130,29 @@ footer {
     color: white;
     margin-top: 5px;
     margin-left: 5px;
+}
+
+@media only screen and (max-width: 1366px) {
+    
+    .main-section {
+        width: 100%;
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 412px) {
+    
+    .main-section {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .text-landing-page {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .opacity-background-text {
+        height: auto;
+    }
 }
