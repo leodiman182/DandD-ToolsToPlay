@@ -22,19 +22,23 @@ const inputOptions = async (opt) => {
   })
 }; 
 
+const proficienciesOptions = async () => {
+  const choseClass = document.querySelector('#classes').value;
+  console.log(choseClass); 
+
+};
+
+const choseClass = document.querySelector('#classes'); 
+choseClass.addEventListener('change', proficienciesOptions)
+
 inputOptions('races');
 inputOptions('classes');
 inputOptions('subclasses');
 inputOptions('alignments');
 inputOptions('equipment');
-inputOptions('proficiencies');
+// inputOptions('proficiencies');
 inputOptions('skills');
 inputOptions('traits');
 
-// const btnSubmit = document.querySelector('#save');
 
-
-// window.onload = { 
-  
-// }
-
+proficienciesOptions();
