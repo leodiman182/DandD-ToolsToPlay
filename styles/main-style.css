@@ -10,10 +10,12 @@
 
 html , body {
     height: auto;
+    scroll-behavior: smooth;
 }
 
 header {
-    position: absolute;
+    position: fixed;
+    z-index: 9;
     flex-direction: column;
     display: flex;
     height: auto;
@@ -128,6 +130,9 @@ main {
     align-items: center;
 }
 
+/* Inicio do SlideSow */
+/* https://www.w3schools.com/howto/howto_js_slideshow.asp */
+
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
@@ -222,6 +227,8 @@ main {
     from {opacity: .4}
     to {opacity: 1}
   }
+
+/* Fim do SlideShow*/
 
 .text-about-create-character {
     display: flex;
