@@ -47,12 +47,6 @@ header {
     background-color: rgba(0, 0, 0, 0.800);
 }
 
-header a {
-    display: flex;
-    width: 20%;
-    text-decoration: none;
-}
-
 header a .create-character {
     width: 100%;
 }
