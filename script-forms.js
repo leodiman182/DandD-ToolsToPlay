@@ -22,8 +22,6 @@ const inputOptions = async (opt) => {
   })
 }; 
 
-
-
 inputOptions('races');
 inputOptions('classes');
 inputOptions('subclasses');
