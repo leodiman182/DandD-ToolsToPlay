@@ -15,11 +15,15 @@
     <title>Welcome to Dungeons & Dragons - Tools to Play</title>
 </head> 
 <body> 
-  <header>
-    <a href="../pages/index.html"><img class="logo" src="../imgs/logoDnD.png" alt="Logo DnD"></a>
-  </header>
+<header>
+  <div class="logo-header">
+    <a href="../pages/main.html">
+      <img class="logo" src="../imgs/logoDnD.png" alt="Logo DnD">
+    </a>
+  </div>
+</header>
 <main>
-  <section>
+  <section class="main-form">
     <form action="" method='GET' >
       <select name="race" id="races" placeholder='Race'>
         <!-- Races -->
@@ -46,6 +50,7 @@
         <option value="" disabled selected>Select your equipment</option>
       </select>
 
+      <p id="number-choices">Choose</p>
       <select name="proficiencies" id="proficiencies" placeholder='Proficiencies'>
         <!-- Proficiencies -->
         <option value="" disabled selected>Select your proficiencies</option>
@@ -63,8 +68,10 @@
 
       <button type='submit' id='save'>Save Character</button>
     </form>
-
   </section>
+  <footer>
+    <a href="./main.html">Back to Main Page</a>
+  </footer>
 </main>
 <script src="../javascript/script-forms.js"></script>
 </body>
