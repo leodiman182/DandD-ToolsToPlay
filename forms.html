@@ -21,17 +21,17 @@
 <main>
   <section>
     <form action="" method='GET' >
-      <select name="race" id="race" placeholder='Race'>
+      <select name="race" id="races" placeholder='Race'>
         <!-- Races -->
         <option value="" disabled selected>Select your race</option>
       </select>
 
-      <select name="class" id="class" placeholder='Classes'>
+      <select name="class" id="classes" placeholder='Classes'>
         <!-- Classes -->
         <option value="" disabled selected>Select your class</option>
       </select>
 
-      <select name="subclass" id="subclass" placeholder='Subclass'>
+      <select name="subclass" id="subclasses" placeholder='Subclass'>
         <!-- Subclasses -->
         <option value="" disabled selected>Select your subclass</option>
       </select>
@@ -46,13 +46,25 @@
         <option value="" disabled selected>Select your equipment</option>
       </select>
 
+      <select name="proficiencies" id="proficiencies" placeholder='Proficiencies'>
+        <!-- Proficiencies -->
+        <option value="" disabled selected>Select your proficiencies</option>
+      </select>
 
-      
+      <select name="skills" id="skills" placeholder='Skills'>
+        <!-- Skills -->
+        <option value="" disabled selected>Select your skills</option>
+      </select>
 
-      <button type='submit'>Save Character</button>
+      <select name="traits" id="traits" placeholder='Traits'>
+        <!-- Traits -->
+        <option value="" disabled selected>Select your traits</option>
+      </select>
+
+      <button type='submit' id='save'>Save Character</button>
     </form>
 
   </section>
 </main>
-
+<script src="script-forms.js"></script>
 </body>
