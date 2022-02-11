@@ -19,7 +19,7 @@
     4. [ ] - Roll Your Dices
     5. [ ] - Your Characters;
 * [ ] -> Criar na página as informações necessárias e acessar via rolagem ou clicando nas abas dos navegation;
-* [ ] -> Manter o footer com o nome dos desenvolvedores;
+* [x] -> Manter o footer com o nome dos desenvolvedores;
 
 3. About:
 * [ ] -> Criar o conteúdo de como usar a página e seu propósito;
