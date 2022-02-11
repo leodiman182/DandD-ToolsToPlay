@@ -21,7 +21,7 @@ header {
     position: absolute;
     display: flex;
     border-bottom: 1px solid lightgray;
-    height: 15%;
+    height: 200px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -43,13 +43,24 @@ main {
     align-items: center;
 }
 
+.opacity-background-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.600);
+    width: 50%;
+    padding: 30px 50px 40px 50px;
+}
+
 .main-section {
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    width: 50%;
+    height: 250px;
+    width: 100%;
+    opacity: 1;
 }
 
 .text-landing-page {
@@ -69,13 +80,12 @@ main {
     background-color: rgb(99, 81, 36);
     border: 1px solid lightgray;
     cursor: pointer;
-    box-shadow: 10px 10px 20px black;
+    box-shadow: 1px 1px 10px white;
     opacity: 0.5;
 }
 
 .button-to-main:hover {
     opacity: 1;
-    transition: 300ms;
 }
 
 .button-to-main:active {
