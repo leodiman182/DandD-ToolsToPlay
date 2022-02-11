@@ -13,6 +13,12 @@ html , body {
     scroll-behavior: smooth;
 }
 
+main {
+    height: auto;
+}
+
+/*========================HEADER*/
+
 header {
     position: fixed;
     z-index: 9;
@@ -37,6 +43,7 @@ header {
     height: 80%;
     width: 100%;
 }   
+/*========================NAV MENU*/
 
 .navigation-links {
     display: flex;
@@ -80,9 +87,7 @@ header {
     color: darkgray;
 }
 
-main {
-    height: auto;
-}
+/*========================ABOUT US*/
 
 .intro {
     display: flex;
@@ -96,16 +101,34 @@ main {
     border-bottom: 1px solid lightgray;
 }
 
-.text-intro {
+.text-background {
     display: flex;
+    flex-direction: column;
     color: white;
     background-color: rgba(0, 0, 0, 0.600);
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    height: 250px;
-    width: 50%;
+    height: auto;
+    width: 85%;
 }
+
+article {
+    height: 100%;
+    text-align: center;
+    padding: 35px;    
+}
+
+article h2 {
+    margin: 10px 0;
+    font-size: 1.8rem;
+}
+
+.text-intro {
+    font-size: 1.4rem;
+}
+
+/*========================DIVIDER*/
 
 .divider {
     display: flex;
@@ -122,6 +145,9 @@ main {
     padding-bottom: 20px;
     font-weight: 700;
 }
+
+/*========================CREATE CHARACTER*/
+
 
 .create-character-zone {
     background-color: lightgray;
