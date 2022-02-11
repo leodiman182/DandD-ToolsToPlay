@@ -17,6 +17,22 @@ main {
     height: auto;
 }
 
+section {
+    background-color: antiquewhite;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 /*========================HEADER*/
 
 header {
@@ -43,6 +59,7 @@ header {
     height: 80%;
     width: 100%;
 }   
+
 /*========================NAV MENU*/
 
 .navigation-links {
@@ -51,40 +68,31 @@ header {
     width: 100%;
 }
 
-.navigation-links div {
+.navigation-links ul {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 20%;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.navigation-links ul li {
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.navigation-links ul li a {
     color: white;
-    border: 1px solid rgba(211, 211, 211, 0.300);
-    cursor: pointer;
+    font-weight: 700;
 }
 
-.create-character:hover {
-    border: 1px solid rgba(211, 211, 211, 1);
-    color: darkgray;
+.navigation-links ul li:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    cursor: pointer;   
 }
 
-.library-search:hover {
-    border: 1px solid rgba(211, 211, 211, 1);
-    color: darkgray;
-}
-
-.about-us:hover {
-    border: 1px solid rgba(211, 211, 211, 1);
-    color: darkgray;
-}
-
-.roll-your-dices:hover {
-    border: 1px solid rgba(211, 211, 211, 1);
-    color: darkgray;
-}
-
-.saved-characters:hover {
-    border: 1px solid rgba(211, 211, 211, 1);
-    color: darkgray;
+.navigation-links ul li a:hover {
+    opacity: 1;
 }
 
 /*========================ABOUT US*/
@@ -125,7 +133,7 @@ article h2 {
 }
 
 .text-intro {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 /*========================DIVIDER*/
@@ -147,7 +155,6 @@ article h2 {
 }
 
 /*========================CREATE CHARACTER*/
-
 
 .create-character-zone {
     background-color: lightgray;

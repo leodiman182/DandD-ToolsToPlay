@@ -23,17 +23,17 @@
         </a>
       </div>
       <nav class="navigation-links">
-        <a href="#divider">
-          <div class="create-character">Create Character</div>
-        </a>
-        <div class="library-search">Library Search</div>
-        <div class="about-us">About Us</div>
-        <div class="roll-your-dices">Roll Your Dices</div>
-        <div class="saved-characters" >Your Characters</div>
+        <ul>
+          <li><a href="#about-us">About us</a></li>
+          <li><a href="#library">Library Search</a></li>
+          <li><a href="#create-character">Create you Character</a></li>
+          <li><a href="#dices">Roll Your Dices</a></li>
+          <li><a href="#saved-characters">Saved Characters</a></li>
+        </ul>
       </nav>
     </header>
     <main>
-      <section class="intro">
+      <section id="about-us" class="intro">
         <div class="text-background">
           <article>
             <h2>About Us</h2>
@@ -45,10 +45,13 @@
           </article>
         </div>
       </section>
+      <section id="library">
+        <h2>Library</h2>
+      </section>
       <div id="divider" class="divider">
         <p> Create Your Character</p>
-      </div>
-      <section class="create-character-zone">
+      </div>      
+      <section id="create-character" class="create-character-zone">
 
         <!-- Inicio do SlideSow -->
         <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
@@ -96,6 +99,12 @@
           </div>
           <a class="link-to-create-character" href=""><div class="button-to-create-character"><p>Create Your Character</p></div></a>
         </article>
+      </section>
+      <section id="dices">
+        <h2>Roll Your Dices!</h2>
+      </section>
+      <section id="saved-characters">
+        <h2>Your Saved Characters</h2>
       </section>
     </main>
     <footer>
