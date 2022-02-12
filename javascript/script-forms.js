@@ -25,7 +25,7 @@ const inputOptions = async (opt) => {
 // add proficiencies you get when you choose your class. \/
 const proficienciesYouGet = async () => {
   const chosenClass = document.querySelector('#classes').value;
-  const url = `classes/${chosenClass}`
+  const url = `classes/${chosenClass}`;
   const getProficiencies = (await fecthOptions(url)).proficiencies;
 
   const createWhatUGet = document.querySelector('#proficiencies-uget');
@@ -39,12 +39,29 @@ const proficienciesYouGet = async () => {
   })
 };
 
+const equipmentsYouGet = async () => {
+  const chosenClass = document.querySelector('#classes').value;
+  const url = `classes/${chosenClass}`;
+  const getEquipments = (await fecthOptions(url)).starting_equipment;
+
+  const createWhatUGet = document.querySelector('#equipments-uget');
+  createWhatUGet.innerText = 'Starting equipment:'; 
+
+  getEquipments.forEach((equipment) => {
+    console.log(equipment.equipment.name);
+    const createEquipment = document.createElement('li');
+    createEquipment.innerText = equipment.equipment.name; 
+    createWhatUGet.appendChild(createEquipment); 
+  })
+};
+
 const chosenClass = document.querySelector('#classes'); 
 
 // add subclasses by class 
 const getSubclasses = async () => {
   const chosenClass = document.querySelector('#classes').value;
   const subclassesOptions = document.querySelector('#subclasses');
+  subclassesOptions.innerHTML = '';
   const url = `classes/${chosenClass}`
   const getSubclasses = (await fecthOptions(url)).subclasses;
   
@@ -57,15 +74,26 @@ const getSubclasses = async () => {
 };
 
 
-// add equipments by class 
+// delete selected created 
+const removeChildren = (dad) => {
+  
+}
+
+
+
+// add equipments by class - incomplete 
 const getEquipementByClass = async () => {
   const chosenClass = document.querySelector('#classes').value;
   const equipmentOptions = document.querySelector('#equipment-options');
+  equipmentOptions.innerHTML = ''; 
+
+  const createP = document.createElement('p'); 
+  createP.innerText = 'Choose your equipments:'
+  equipmentOptions.appendChild(createP);
   const url = `classes/${chosenClass}`
   const getEquipments = (await fecthOptions(url)).starting_equipment_options;
   
   // console.log(getEquipments);
-
   getEquipments.forEach((choice, index) => {
     const createSelect = document.createElement('select'); 
     createSelect.id = `equipment${index + 1}`; 
@@ -73,11 +101,17 @@ const getEquipementByClass = async () => {
      // console.log(choice);
     choice.from.forEach((option) => {
       const firstKeyOpt = Object.keys(option)[0];
-      console.log(option);
+      const firstKeyEqp = Object.keys(option[firstKeyOpt]);
       
-      // const createOption = document.createElement('option'); 
-      // createOption.innerText = option.name;
-      // createSelect.appendChild(createOption);
+      //console.log(option[firstKeyOpt]);
+      // não to conseguindo acessar os nomes que estão em outro lugar \/ sos 
+      // const otherNameEqpt = option[firstKeyOpt].equipment.name ? option[firstKeyOpt].equipment.name : option[firstKeyOpt].from.equipment_category.name  
+      const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : 'oi'   // otherNameEqpt; 
+      //console.log(nameEquiptment);
+      
+      const createOption = document.createElement('option'); 
+      createOption.innerText = nameEquiptment;
+      createSelect.appendChild(createOption);
     })
     
     // console.log(choice.from);
@@ -97,6 +131,7 @@ inputOptions('classes');
 chosenClass.addEventListener('change', getSubclasses);
 inputOptions('alignments');
 // inputOptions('equipment');
+chosenClass.addEventListener('change', equipmentsYouGet);
 chosenClass.addEventListener('change', getEquipementByClass);
 // inputOptions('proficiencies');
 chosenClass.addEventListener('change', proficienciesYouGet);

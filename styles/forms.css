@@ -18,7 +18,7 @@ main {
 }
 
 section {
-    background-color: antiquewhite;
+    background-color: rgb(216, 216, 216);
 }
 
 h2 {
@@ -107,11 +107,15 @@ select {
 }
 
 /*========================FOOTER*/
-
+/* 
 footer {
     height: 10vh;
     background-color: black;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 footer button {
@@ -129,4 +133,4 @@ footer button a {
 
 footer button:hover {    
     opacity: 1;
-}
+} */
