@@ -23,6 +23,7 @@ section {
 
 h2 {
     text-align: center;
+    font-size: 2rem;
 }
 
 ul {
@@ -82,6 +83,7 @@ header a .create-character {
 .navigation-links ul li {
     opacity: 0.8;
     transition: 0.2s;
+    font-size: 1.2rem;
 }
 
 .navigation-links ul li a {
@@ -322,29 +324,20 @@ article h2 {
 footer {
     display: flex;
     justify-content: center;
-    height: 80px;
-    width: 100%;
-    border-top: 1px solid lightgray;
-    background-color: rgba(0, 0, 0, 0.950);
-}
-
-.container-devs {
-    display: flex;
-    flex-direction: row;
+    height: 80px;    
+    background-color: rgba(0, 0, 0, 1);
     align-items: center;
-    justify-content: center;
+    color: white;
+    margin-top: 15px;
+    text-align: center;
 }
 
-.container-footer {
+footer div p strong {
     display: flex;
-    color: white;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding-top: 7px;
 }
 
-.container-devs h5,.container-devs p {
-    color: white;
-    margin-top: 5px;
-    margin-left: 5px;
+footer div p {
+    font-size: 1.25rem;    
 }

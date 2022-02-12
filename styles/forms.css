@@ -40,7 +40,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    height: 20vh;
     width: 100%;
     position: fixed;
     z-index: 9;
@@ -68,27 +68,65 @@ header a .create-character {
 /*========================FORM SECTION*/
 
 .main-form {
-    margin-top: 200px;
-    height: 85%;
+    margin-top: 20vh;
+    height: 70vh;
 }
 
 form {
-    padding: 100px;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    width: 35%;
+    margin: auto;
+    padding-top: 30px;
 }
 
 select {
     margin: 10px 0;
+    padding: 6px;
+    font-size: 1.1rem;
 }
 
 .main-form button {
+    opacity: 0.8;
+    width: 50%;
+    margin: auto;
     margin-top: 15px;
+    font-size: 1.1rem;
+    padding: 8px;
+    background-color: black;
+    color: antiquewhite;
+    border: none;
+    transition: 0.25s;
+}
+
+.main-form button:hover {
+    opacity: 1;
+    background-color: #b6352e;
+    color: black;
+    border: 1px solid black;
 }
 
 /*========================FOOTER*/
 
 footer {
-    height: 15%;
+    height: 10vh;
     background-color: black;
+    text-align: center;
+}
+
+footer button {
+    margin-top: 2vh;
+    padding: 10px;
+    background-color: antiquewhite;
+    opacity: 0.85;
+    border-radius: 5px;
+}
+
+footer button a {
+    font-size: 1.2rem;
+    color: black;
+}
+
+footer button:hover {    
+    opacity: 1;
 }
