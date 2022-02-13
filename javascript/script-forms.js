@@ -65,6 +65,7 @@ const abilityInfo = async (ability) => {
   return abilityDescription;
 };
 
+// adds spells options to choose by class 
 const spellsToChoose = async () => { 
   const chosenClass = document.querySelector('#classes').value;
   const url = `classes/${chosenClass}/spells`;
