@@ -245,7 +245,8 @@ const racesDescription = async () => {
   const langYouSpeak = document.querySelector('#languages-uspeak');
   langYouSpeak.innerText = languages;
 
-  const langYouSpeak = document.querySelector('#speed');
+  const speed = document.querySelector('#speed');
+  speed.innerText = `Speed: ${race.speed}`
 
 }
 
