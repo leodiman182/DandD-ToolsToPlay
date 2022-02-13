@@ -59,11 +59,10 @@ const abilityInfo = async (ability) => {
   const url = `ability-scores/${ability}`; 
   const data = await fecthOptions(url);
   const description = data.desc;
-  console.log(data.desc);
+  // console.log(data.desc);
 
   const abilityDescription = description.join(' ');
-  console.log(abilityDescription);
-  return abilityDescription
+  return abilityDescription;
 };
 
 const spellsYouGet = async () => {
@@ -82,11 +81,8 @@ const spellsYouGet = async () => {
     const description = getSpellCasting.info[0].desc[0];
     levelAbility.innerHTML = description;
 
-    console.log(getSpellCasting);
+    // console.log(getSpellCasting);
     // console.log(description);
-
-    console.log(ability);
-
   }
 };
 
@@ -108,13 +104,42 @@ const getSubclasses = async () => {
   });
 };
 
-
-// delete selected created 
-const removeChildren = (dad) => {
+// create proficiencies options to choose according to the class you've chosen
+// it still needs to limit the number of choices tho 
+const proficienciesToChoose = async () => {
+  const equipmentOptions = document.querySelector('#proficiencies-choices');
+  equipmentOptions.innerHTML = ''; 
   
+  const chosenClass = document.querySelector('#classes').value;
+  const url = `classes/${chosenClass}`
+  const getProficiencies = (await fecthOptions(url)).proficiency_choices;
+  const numberOfChoices = getProficiencies[0].choose;
+  
+  const createP = document.createElement('p');
+  createP.id = 'number-choices';
+  createP.innerText = `Choose ${numberOfChoices} proficiencies:`;
+  equipmentOptions.appendChild(createP);
+  
+  const proficienciesList = getProficiencies[0].from;
+
+  proficienciesList.forEach((option) => {
+    console.log(option);
+
+    const createLabel = document.createElement('label'); 
+    createLabel.for = option.index;
+    const nameOption = option.name.split(':')[0] === 'Skill' ? option.name.split(':')[1] : option.name.split(':')[0];
+    createLabel.innerText = nameOption;
+    equipmentOptions.appendChild(createLabel);
+    console.log(nameOption);
+
+    const createInput = document.createElement('input'); 
+    createInput.type = 'checkbox'; 
+    createInput.name = 'proficiency';
+    createInput.id = option.index;
+    createLabel.appendChild(createInput);
+  });
+
 }
-
-
 
 // add equipments by class - incomplete 
 const getEquipementByClass = async () => {
@@ -170,9 +195,11 @@ chosenClass.addEventListener('change', equipmentsYouGet);
 chosenClass.addEventListener('change', getEquipementByClass);
 // inputOptions('proficiencies');
 chosenClass.addEventListener('change', proficienciesYouGet);
+chosenClass.addEventListener('change', proficienciesToChoose);
 inputOptions('skills');
 chosenClass.addEventListener('change', spellsYouGet);
 inputOptions('traits');
+
 
 
 // proficienciesYouGet();
