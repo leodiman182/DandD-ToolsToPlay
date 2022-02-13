@@ -255,9 +255,10 @@ const proficienciesToChoose = async () => {
 
   });
   
-  if(getProficiencies[1]) {
+  const skills = document.querySelector('#skill-choices');
+  
+  if(chosenClass === 'bard') {
     console.log(getProficiencies[1])
-    const skills = document.querySelector('#skill-choices');
     const createBardSkills = document.createElement('div'); 
     createBardSkills.id = 'bard-skills'; 
     skills.appendChild(createBardSkills); 
@@ -277,11 +278,17 @@ const proficienciesToChoose = async () => {
     createInput.name = 'bard-skill';
     createInput.id = option.index;
     createLabel.appendChild(createInput);
-
-
     })
+    
   }
-
+  
+  const bardSkills = document.querySelector('#bard-skills');
+  
+  if (chosenClass !== 'bard') {
+    if (bardSkills) {
+      skills.removeChild(bardSkills)
+    };
+  };
 
 }
 
