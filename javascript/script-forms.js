@@ -92,7 +92,7 @@ const spellsToChoose = async () => {
 
   })
 
-}
+};
 
 const spellsYouGet = async () => {
   const chosenClass = document.querySelector('#classes').value;
@@ -216,6 +216,24 @@ const getEquipementByClass = async () => {
   })
 }
 
+const raceOptions = document.querySelector('#races');
+
+const racesDescription = async () => {
+  const chosenRace = raceOptions.value;
+  const url = `races/${chosenRace}`;
+  const race = await fecthOptions(url)
+
+  const alignments = document.querySelector('#alignments-info'); 
+  alignments.innerText = race.alignment;
+
+  const ageInfo = document.querySelector('#age-info'); 
+  ageInfo.innerText = race.age;
+
+  const sizeInfo = document.querySelector('#size-info'); 
+  sizeInfo.innerText = `${race.size_description}`;
+
+  console.log(race.alignment);
+}
 
 
 // const getProficiencies = (await fecthOptions(url)).proficiency_choices;
@@ -224,6 +242,7 @@ const getEquipementByClass = async () => {
 //console.log(getProficiencies); 
 
 inputOptions('races');
+raceOptions.addEventListener('change', racesDescription)
 inputOptions('classes');
 // inputOptions('subclasses');
 chosenClass.addEventListener('change', getSubclasses);

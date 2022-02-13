@@ -25,25 +25,62 @@
 <main>
   <section class="main-form">
     <form action="" method='GET' >
-      <select name="race" id="races" placeholder='Race'>
-        <!-- Races -->
-        <option value="" disabled selected>Select your race</option>
-      </select>
 
-      <select name="class" id="classes" placeholder='Classes'>
-        <!-- Classes -->
-        <option value="" disabled selected>Select your class</option>
-      </select>
+      <div>
+        <p>Choose your name:</p>
+        <input type="text" placeholder="Write your name">
+      </div>
 
-      <select name="subclass" id="subclasses" placeholder='Subclass'>
-        <!-- Subclasses -->
-        <option value="" disabled selected>Select your subclass</option>
-      </select>
+      <div>
+        <p>Choose your race:</p>
+        <select name="race" id="races" placeholder='Race'>
+          <!-- Races -->
+          <option value="" disabled selected>Select your race</option>
+        </select>
 
-      <select name="alignments" id="alignments" placeholder='Alignments'>
-        <!-- Alignments -->
-        <option value="" disabled selected>Select your alignment</option>
-      </select>
+        <div id="age-choices">
+          <p id="age-info"></p>
+          <div>
+            <p>Choose your age:</p>
+            <input type="number" id="choose-age" placeholder="Write your age">
+          </div>
+        </div>
+
+        <div id="size-choice">
+          <p id="size-info"></p>
+          <div>
+            <p>Choose your size:</p>
+            <input type="number" id="choose-size" placeholder="Write your size">
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        <p>Choose your class:</p>
+        <select name="class" id="classes" placeholder='Classes'>
+          <!-- Classes -->
+          <option value="" disabled selected>Select your class</option>
+        </select>
+      </div>
+      <div> 
+        <p>Choose your subclass:</p>     
+        <select name="subclass" id="subclasses" placeholder='Subclass'>
+          <!-- Subclasses -->
+          <option value="" disabled selected>Select your subclass</option>
+        </select>
+      </div>
+
+      <div>
+        <p id='alignments-info'></p>
+        <div>
+          <p>Choose your alignment:</p>
+          <select name="alignments" id="alignments" placeholder='Alignments'>
+            <!-- Alignments -->
+            <option value="" disabled selected>Select your alignment</option>
+          </select>
+        </div>
+      </div>
 
       <!-- <select name="equipment" id="equipment1" placeholder='Equipment'>
          Equipments 
@@ -56,13 +93,11 @@
       <div id='what-u-get'>
         <ul id='proficiencies-uget'></ul>
       </div>
-      <hr>
       
       <div id='equip-u-get'>
         <ul id='equipments-uget'></ul>
       </div>
-      <hr>
-
+    
       <div id = 'equipment-options'></div>
 
       <div id='spellCasting'>
