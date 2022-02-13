@@ -244,7 +244,11 @@ const racesDescription = async () => {
 
   const langYouSpeak = document.querySelector('#languages-uspeak');
   langYouSpeak.innerText = languages;
+
+  const langYouSpeak = document.querySelector('#speed');
+
 }
+
 
 
 // const getProficiencies = (await fecthOptions(url)).proficiency_choices;
@@ -268,6 +272,6 @@ inputOptions('skills');
 chosenClass.addEventListener('change', spellsYouGet);
 inputOptions('traits');
 
-
+module.exports = fecthOptions;
 
 // proficienciesYouGet();
