@@ -1,3 +1,5 @@
+// const fecthOptions = require('.fecthOptions/fecthOptions')
+
 const fecthOptions = async (search) => {
   const url = `https://www.dnd5eapi.co/api/${search}`; 
   const response = await fetch(url); 
@@ -82,7 +84,7 @@ const spellsToChoose = async () => {
 
   spellsList.forEach((spell) => {
     // // label + checkbox 
-    console.log(spell);
+    // console.log(spell);
     const createLabel = document.createElement('label'); 
     createLabel.for = spell.index;
     createLabel.innerText = spell.name;
@@ -147,6 +149,78 @@ const getSubclasses = async () => {
 
 // create proficiencies options to choose according to the class you've chosen
 // it still needs to limit the number of choices tho 
+
+// const proficienciesToChoose = async () => {
+  // const skills = document.querySelector('#skills');
+  // skills.innerHTML = ''; 
+  
+  // // const newDiv = document.createElement('div'); 
+  // // newDiv.id = 'proficiencies-choices';
+  
+  // // skills.appendChild(newDiv);
+  // console.log('oie');
+  // const equipmentOptions = document.querySelector('#proficiencies-choices');
+  // equipmentOptions.innerHTML = ''; 
+  
+  // const chosenClass = document.querySelector('#classes').value;
+  // const url = `classes/${chosenClass}`
+  // const getProficiencies = (await fecthOptions(url)).proficiency_choices;
+  // const numberOfChoices = getProficiencies[0].choose;
+  
+  // const createP = document.createElement('p');
+  // createP.id = 'number-choices';
+  // createP.innerText = `Choose ${numberOfChoices} skills:`;
+  // equipmentOptions.appendChild(createP);
+  
+  // const proficienciesList = getProficiencies[0].from;
+
+  // console.log(proficienciesList);
+  // proficienciesList.forEach((option) => {
+  //   // console.log(option);
+
+  //   const createLabel = document.createElement('label'); 
+  //   createLabel.for = option.index;
+  //   const nameOption = option.name.split(':')[0] === 'Skill' ? option.name.split(':')[1] : option.name;
+  //   createLabel.innerText = nameOption;
+  //   equipmentOptions.appendChild(createLabel);
+  //   // console.log(nameOption);
+
+  //   const createInput = document.createElement('input'); 
+  //   createInput.type = 'checkbox'; 
+  //   createInput.name = 'proficiency';
+  //   createInput.id = option.index;
+  //   createLabel.appendChild(createInput);
+  // });
+
+  // if(getProficiencies[1].from) {
+  //   skills.innerHTML = '';
+  //   const createBardSkills = document.createElement('p'); 
+  //   createBardSkills.innerText = `Choose ${getProficiencies[1].choose} bard skills:`;
+    
+  //   const createDiv = document.createElement('div'); 
+  //   createDiv.id = 'bard-skills';
+  //   skills.appendChild(createDiv);
+    
+  //   createDiv.appendChild(createBardSkills);
+
+  //   getProficiencies[1].from.forEach((option) => {
+  //     const createLabel = document.createElement('label'); 
+  //   createLabel.for = option.index;
+  //   const nameOption = option.name.split(':')[0] === 'Skill' ? option.name.split(':')[1] : option.name;
+  //   createLabel.innerText = nameOption;
+  //   createDiv.appendChild(createLabel);
+  //   // console.log(nameOption);
+
+  //   const createInput = document.createElement('input'); 
+  //   createInput.type = 'checkbox'; 
+  //   createInput.name = 'proficiency';
+  //   createInput.id = option.index;
+  //   createLabel.appendChild(createInput);
+  //   })
+  // }
+
+// }
+
 const proficienciesToChoose = async () => {
   const equipmentOptions = document.querySelector('#proficiencies-choices');
   equipmentOptions.innerHTML = ''; 
@@ -178,7 +252,13 @@ const proficienciesToChoose = async () => {
     createInput.name = 'proficiency';
     createInput.id = option.index;
     createLabel.appendChild(createInput);
+
   });
+  
+  if(getProficiencies[1]) {
+    console.log(getProficiencies[1])
+  }
+
 
 }
 
@@ -290,6 +370,6 @@ chosenClass.addEventListener('change', spellsYouGet);
 
 raceOptions.addEventListener('change', traitsYouGet);
 
-module.exports = [fecthOptions, inputOptions, proficienciesYouGet, equipmentsYouGet, abilityInfo, ];
+
 
 // proficienciesYouGet();

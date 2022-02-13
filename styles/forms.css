@@ -117,7 +117,8 @@ select, #name-choice, #choose-age, #choose-size {
 #equip-u-get, 
 #equipment-options, 
 #traits-uget,
-#choose-class {
+#choose-class,
+#bard-skills {
     display: flex;
     flex-direction: column;
     padding-top: 13px;
