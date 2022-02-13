@@ -75,15 +75,16 @@ header a .create-character {
 form {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 70%;
     margin: auto;
     padding-top: 30px;
 }
 
-select {
+select, #name-choice, #choose-age, #choose-size {
     margin: 10px 0;
     padding: 6px;
     font-size: 1.1rem;
+    width: 100%;
 }
 
 .main-form button {
