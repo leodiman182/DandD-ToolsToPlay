@@ -246,14 +246,16 @@ const equipmentsYouChoose = async () => {
       const firstKeyOpt = Object.keys(option)[0];
       console.log(option[firstKeyOpt]);
       const firstKeyEqp = Object.keys(option[firstKeyOpt]);
-      console.log(firstKeyEqp);
+      // console.log(firstKeyEqp);
+      const differentNameEqp = firstKeyEqp[2] === 'from' ? option[firstKeyOpt].from.equipment_category.name : 'oi';
+      const otherNameEqp = firstKeyEqp[0] === 'equipment' ?  option[firstKeyOpt].equipment.name : differentNameEqp; 
 //       const otherName = (firstKeyEqp.contains('from')) ? 'sim' : 'não'
       // option.firstKeyOpt
       //console.log(option[firstKeyOpt]);
       // não to conseguindo acessar os nomes que estão em outro lugar \/ sos 
       // const otherNameEqpt = option[firstKeyOpt].equipment.name ? option[firstKeyOpt].equipment.name : option[firstKeyOpt].from.equipment_category.name  
-      const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : 'oi' // otherName; 
-      //console.log(nameEquiptment);
+      const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : otherNameEqp; 
+      console.log(nameEquiptment);
       
       const createOption = document.createElement('option'); 
       createOption.innerText = nameEquiptment;
