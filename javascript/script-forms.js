@@ -150,75 +150,8 @@ const getSubclasses = async () => {
 // create proficiencies options to choose according to the class you've chosen
 // it still needs to limit the number of choices tho 
 
-// const proficienciesToChoose = async () => {
-  // const skills = document.querySelector('#skills');
-  // skills.innerHTML = ''; 
+// const getSkillDescription = () => {
   
-  // // const newDiv = document.createElement('div'); 
-  // // newDiv.id = 'proficiencies-choices';
-  
-  // // skills.appendChild(newDiv);
-  // console.log('oie');
-  // const equipmentOptions = document.querySelector('#proficiencies-choices');
-  // equipmentOptions.innerHTML = ''; 
-  
-  // const chosenClass = document.querySelector('#classes').value;
-  // const url = `classes/${chosenClass}`
-  // const getProficiencies = (await fecthOptions(url)).proficiency_choices;
-  // const numberOfChoices = getProficiencies[0].choose;
-  
-  // const createP = document.createElement('p');
-  // createP.id = 'number-choices';
-  // createP.innerText = `Choose ${numberOfChoices} skills:`;
-  // equipmentOptions.appendChild(createP);
-  
-  // const proficienciesList = getProficiencies[0].from;
-
-  // console.log(proficienciesList);
-  // proficienciesList.forEach((option) => {
-  //   // console.log(option);
-
-  //   const createLabel = document.createElement('label'); 
-  //   createLabel.for = option.index;
-  //   const nameOption = option.name.split(':')[0] === 'Skill' ? option.name.split(':')[1] : option.name;
-  //   createLabel.innerText = nameOption;
-  //   equipmentOptions.appendChild(createLabel);
-  //   // console.log(nameOption);
-
-  //   const createInput = document.createElement('input'); 
-  //   createInput.type = 'checkbox'; 
-  //   createInput.name = 'proficiency';
-  //   createInput.id = option.index;
-  //   createLabel.appendChild(createInput);
-  // });
-
-  // if(getProficiencies[1].from) {
-  //   skills.innerHTML = '';
-  //   const createBardSkills = document.createElement('p'); 
-  //   createBardSkills.innerText = `Choose ${getProficiencies[1].choose} bard skills:`;
-    
-  //   const createDiv = document.createElement('div'); 
-  //   createDiv.id = 'bard-skills';
-  //   skills.appendChild(createDiv);
-    
-  //   createDiv.appendChild(createBardSkills);
-
-  //   getProficiencies[1].from.forEach((option) => {
-  //     const createLabel = document.createElement('label'); 
-  //   createLabel.for = option.index;
-  //   const nameOption = option.name.split(':')[0] === 'Skill' ? option.name.split(':')[1] : option.name;
-  //   createLabel.innerText = nameOption;
-  //   createDiv.appendChild(createLabel);
-  //   // console.log(nameOption);
-
-  //   const createInput = document.createElement('input'); 
-  //   createInput.type = 'checkbox'; 
-  //   createInput.name = 'proficiency';
-  //   createInput.id = option.index;
-  //   createLabel.appendChild(createInput);
-  //   })
-  // }
-
 // }
 
 const proficienciesToChoose = async () => {
@@ -293,7 +226,7 @@ const proficienciesToChoose = async () => {
 }
 
 // add equipments by class - incomplete 
-const getEquipementByClass = async () => {
+const equipmentsYouChoose = async () => {
   const chosenClass = document.querySelector('#classes').value;
   const equipmentOptions = document.querySelector('#equipment-options');
   equipmentOptions.innerHTML = ''; 
@@ -309,15 +242,17 @@ const getEquipementByClass = async () => {
     const createSelect = document.createElement('select'); 
     createSelect.id = `equipment${index + 1}`; 
     equipmentOptions.appendChild(createSelect);
-     // console.log(choice);
     choice.from.forEach((option) => {
       const firstKeyOpt = Object.keys(option)[0];
+      console.log(option[firstKeyOpt]);
       const firstKeyEqp = Object.keys(option[firstKeyOpt]);
-      
+      console.log(firstKeyEqp);
+//       const otherName = (firstKeyEqp.contains('from')) ? 'sim' : 'não'
+      // option.firstKeyOpt
       //console.log(option[firstKeyOpt]);
       // não to conseguindo acessar os nomes que estão em outro lugar \/ sos 
       // const otherNameEqpt = option[firstKeyOpt].equipment.name ? option[firstKeyOpt].equipment.name : option[firstKeyOpt].from.equipment_category.name  
-      const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : 'oi'   // otherNameEqpt; 
+      const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : 'oi' // otherName; 
       //console.log(nameEquiptment);
       
       const createOption = document.createElement('option'); 
@@ -391,15 +326,21 @@ chosenClass.addEventListener('change', getSubclasses);
 inputOptions('alignments');
 // inputOptions('equipment');
 chosenClass.addEventListener('change', equipmentsYouGet);
-chosenClass.addEventListener('change', getEquipementByClass);
+chosenClass.addEventListener('change', equipmentsYouChoose);
 // inputOptions('proficiencies');
 chosenClass.addEventListener('change', proficienciesYouGet);
 chosenClass.addEventListener('change', proficienciesToChoose);
-inputOptions('skills');
+// inputOptions('skills');
 chosenClass.addEventListener('change', spellsYouGet);
 
 raceOptions.addEventListener('change', traitsYouGet);
 
+
+
+// fix bug equipments 
+// get skills description when u select one 
+// limit number of skill choices 
+// save everything on localStorage 
 
 
 // proficienciesYouGet();

@@ -118,7 +118,9 @@ select, #name-choice, #choose-age, #choose-size {
 #equipment-options, 
 #traits-uget,
 #choose-class,
-#bard-skills {
+#bard-skills, 
+#levelAbility, 
+#spellAbility {
     display: flex;
     flex-direction: column;
     padding-top: 13px;
