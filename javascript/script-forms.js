@@ -48,11 +48,46 @@ const equipmentsYouGet = async () => {
   createWhatUGet.innerText = 'Starting equipment:'; 
 
   getEquipments.forEach((equipment) => {
-    console.log(equipment.equipment.name);
+    // console.log(equipment.equipment.name);
     const createEquipment = document.createElement('li');
     createEquipment.innerText = equipment.equipment.name; 
     createWhatUGet.appendChild(createEquipment); 
   })
+};
+
+const abilityInfo = async (ability) => {
+  const url = `ability-scores/${ability}`; 
+  const data = await fecthOptions(url);
+  const description = data.desc;
+  console.log(data.desc);
+
+  const abilityDescription = description.join(' ');
+  console.log(abilityDescription);
+  return abilityDescription
+};
+
+const spellsYouGet = async () => {
+  const chosenClass = document.querySelector('#classes').value;
+  const url = `classes/${chosenClass}`;
+  const classInfo = await fecthOptions(url);
+  const getSpellCasting = classInfo.spellcasting ? classInfo.spellcasting : ''; 
+
+  if (getSpellCasting !== '') {
+    const spellAbility = document.querySelector('#spellAbility'); 
+    const ability = getSpellCasting.spellcasting_ability.index;
+    const abilityDescription = await abilityInfo(ability)
+    spellAbility.innerHTML = abilityDescription;
+
+    const levelAbility = document.querySelector('#levelAbility'); 
+    const description = getSpellCasting.info[0].desc[0];
+    levelAbility.innerHTML = description;
+
+    console.log(getSpellCasting);
+    // console.log(description);
+
+    console.log(ability);
+
+  }
 };
 
 const chosenClass = document.querySelector('#classes'); 
@@ -136,6 +171,7 @@ chosenClass.addEventListener('change', getEquipementByClass);
 // inputOptions('proficiencies');
 chosenClass.addEventListener('change', proficienciesYouGet);
 inputOptions('skills');
+chosenClass.addEventListener('change', spellsYouGet);
 inputOptions('traits');
 
 
