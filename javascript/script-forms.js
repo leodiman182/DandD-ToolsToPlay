@@ -73,7 +73,12 @@ const spellsToChoose = async () => {
   // console.log(spellsList);
 
   const insideSpells = document.querySelector('#spellOptions');
+  insideSpells.display = 'flex';
   insideSpells.innerHTML = ''; 
+
+  const createP = document.createElement('p');
+  createP.innerText = 'Choose your spells:'
+  insideSpells.appendChild(createP);
 
   spellsList.forEach((spell) => {
     // // label + checkbox 
@@ -252,6 +257,7 @@ const traitsYouGet = async () => {
   const race = await fecthOptions(url)
 
   const yourTraits = document.querySelector('#traits');
+  yourTraits.innerHTML = race.traits.length > 1 ? 'Traits you get:' : '';
 
   race.traits.forEach((trait) => {
     const createLi = document.createElement('li');

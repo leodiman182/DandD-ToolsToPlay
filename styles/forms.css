@@ -87,6 +87,10 @@ select, #name-choice, #choose-age, #choose-size {
     width: 100%;
 }
 
+#spellOptions {
+    display: none;
+}
+
 .main-form button {
     opacity: 0.8;
     width: 50%;
@@ -107,10 +111,16 @@ select, #name-choice, #choose-age, #choose-size {
     border: 1px solid black;
 }
 
-#proficiencies-choices, #what-u-get, #spellOptions,  #equip-u-get {
+#proficiencies-choices, 
+#what-u-get,
+#spellOptions, 
+#equip-u-get, 
+#equipment-options, 
+#traits-uget,
+#choose-class {
     display: flex;
     flex-direction: column;
-    padding: 13px;
+    padding-top: 13px;
 }
 
 
