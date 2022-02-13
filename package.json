@@ -19,5 +19,8 @@
   "homepage": "https://github.com/leodiman182/DandD-ToolsToPlay#readme",
   "devDependencies": {
     "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.0"
   }
 }
