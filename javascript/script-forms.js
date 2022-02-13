@@ -83,7 +83,6 @@ const spellsToChoose = async () => {
     createLabel.innerText = spell.name;
     insideSpells.appendChild(createLabel);
 
-
     const createInput = document.createElement('input'); 
     createInput.type = 'checkbox'; 
     createInput.name = 'spells';
@@ -91,7 +90,6 @@ const spellsToChoose = async () => {
     createLabel.appendChild(createInput);
 
   })
-
 };
 
 const spellsYouGet = async () => {
@@ -236,20 +234,32 @@ const racesDescription = async () => {
   languageInfo.innerText = race.language_desc; 
   
   const languages = race.languages.reduce((acc, curr) => {
-    
-    console.log(curr);
+    //console.log(curr);
     acc = `${acc} ${curr.name}.`
     return acc;
   }, '');
 
   const langYouSpeak = document.querySelector('#languages-uspeak');
-  langYouSpeak.innerText = languages;
+  langYouSpeak.innerText = `Languages you speak: ${languages}`;
 
   const speed = document.querySelector('#speed');
   speed.innerText = `Speed: ${race.speed}`
-
 }
 
+const traitsYouGet = async () => {
+  const chosenRace = raceOptions.value;
+  const url = `races/${chosenRace}`;
+  const race = await fecthOptions(url)
+
+  const yourTraits = document.querySelector('#traits');
+
+  race.traits.forEach((trait) => {
+    const createLi = document.createElement('li');
+    createLi.innerText = trait.name; 
+    yourTraits.appendChild(createLi);
+  })
+  console.log(race.traits);
+};
 
 
 // const getProficiencies = (await fecthOptions(url)).proficiency_choices;
@@ -271,8 +281,9 @@ chosenClass.addEventListener('change', proficienciesYouGet);
 chosenClass.addEventListener('change', proficienciesToChoose);
 inputOptions('skills');
 chosenClass.addEventListener('change', spellsYouGet);
-inputOptions('traits');
 
-module.exports = fecthOptions;
+raceOptions.addEventListener('change', traitsYouGet);
+
+module.exports = [fecthOptions, inputOptions, proficienciesYouGet, equipmentsYouGet, abilityInfo, ];
 
 // proficienciesYouGet();
