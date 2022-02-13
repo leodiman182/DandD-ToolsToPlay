@@ -65,26 +65,63 @@ const abilityInfo = async (ability) => {
   return abilityDescription;
 };
 
+const spellsToChoose = async () => { 
+  const chosenClass = document.querySelector('#classes').value;
+  const url = `classes/${chosenClass}/spells`;
+  const spellsList = (await fecthOptions(url)).results;
+  // console.log(spellsList);
+
+  const insideSpells = document.querySelector('#spellOptions');
+  insideSpells.innerHTML = ''; 
+
+  spellsList.forEach((spell) => {
+    // // label + checkbox 
+    console.log(spell);
+    const createLabel = document.createElement('label'); 
+    createLabel.for = spell.index;
+    createLabel.innerText = spell.name;
+    insideSpells.appendChild(createLabel);
+
+
+    const createInput = document.createElement('input'); 
+    createInput.type = 'checkbox'; 
+    createInput.name = 'spells';
+    createInput.id = spell.index;
+    createLabel.appendChild(createInput);
+
+  })
+
+}
+
 const spellsYouGet = async () => {
   const chosenClass = document.querySelector('#classes').value;
   const url = `classes/${chosenClass}`;
   const classInfo = await fecthOptions(url);
-  const getSpellCasting = classInfo.spellcasting ? classInfo.spellcasting : ''; 
 
+  const spellAbility = document.querySelector('#spellAbility'); 
+  spellAbility.innerHTML = '';
+  const levelAbility = document.querySelector('#levelAbility'); 
+  levelAbility.innerHTML = ''; 
+
+  const getSpellCasting = classInfo.spellcasting ? classInfo.spellcasting : ''; 
+  
   if (getSpellCasting !== '') {
-    const spellAbility = document.querySelector('#spellAbility'); 
     const ability = getSpellCasting.spellcasting_ability.index;
     const abilityDescription = await abilityInfo(ability)
     spellAbility.innerHTML = abilityDescription;
 
-    const levelAbility = document.querySelector('#levelAbility'); 
     const description = getSpellCasting.info[0].desc[0];
     levelAbility.innerHTML = description;
 
+    const insideSpells = document.querySelector('#spellOptions');
+    insideSpells.innerHTML = ''; 
+    const test = await spellsToChoose(); 
+    // console.log(test);
     // console.log(getSpellCasting);
     // console.log(description);
   }
 };
+
 
 const chosenClass = document.querySelector('#classes'); 
 
@@ -123,14 +160,14 @@ const proficienciesToChoose = async () => {
   const proficienciesList = getProficiencies[0].from;
 
   proficienciesList.forEach((option) => {
-    console.log(option);
+    // console.log(option);
 
     const createLabel = document.createElement('label'); 
     createLabel.for = option.index;
     const nameOption = option.name.split(':')[0] === 'Skill' ? option.name.split(':')[1] : option.name.split(':')[0];
     createLabel.innerText = nameOption;
     equipmentOptions.appendChild(createLabel);
-    console.log(nameOption);
+    // console.log(nameOption);
 
     const createInput = document.createElement('input'); 
     createInput.type = 'checkbox'; 
