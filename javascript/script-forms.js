@@ -232,7 +232,7 @@ const proficienciesToChoose = async () => {
   
   const createP = document.createElement('p');
   createP.id = 'number-choices';
-  createP.innerText = `Choose ${numberOfChoices} proficiencies:`;
+  createP.innerText = `Choose ${numberOfChoices} skills:`;
   equipmentOptions.appendChild(createP);
   
   const proficienciesList = getProficiencies[0].from;
@@ -249,7 +249,7 @@ const proficienciesToChoose = async () => {
 
     const createInput = document.createElement('input'); 
     createInput.type = 'checkbox'; 
-    createInput.name = 'proficiency';
+    createInput.name = 'skill';
     createInput.id = option.index;
     createLabel.appendChild(createInput);
 
@@ -257,6 +257,29 @@ const proficienciesToChoose = async () => {
   
   if(getProficiencies[1]) {
     console.log(getProficiencies[1])
+    const skills = document.querySelector('#skill-choices');
+    const createBardSkills = document.createElement('div'); 
+    createBardSkills.id = 'bard-skills'; 
+    skills.appendChild(createBardSkills); 
+
+    const createPBard = document.createElement('p'); 
+    createPBard.innerText = `Choose ${numberOfChoices} bard skills:`
+    createBardSkills.appendChild(createPBard); 
+
+    getProficiencies[1].from.forEach((option) => {
+      const createLabel = document.createElement('label'); 
+      createLabel.for = option.index;
+      createLabel.innerText = option.name;
+      createBardSkills.appendChild(createLabel);
+
+      const createInput = document.createElement('input'); 
+    createInput.type = 'checkbox'; 
+    createInput.name = 'bard-skill';
+    createInput.id = option.index;
+    createLabel.appendChild(createInput);
+
+
+    })
   }
 
 
