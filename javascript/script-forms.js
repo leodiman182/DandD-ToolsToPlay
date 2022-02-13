@@ -230,9 +230,20 @@ const racesDescription = async () => {
   ageInfo.innerText = race.age;
 
   const sizeInfo = document.querySelector('#size-info'); 
-  sizeInfo.innerText = `${race.size_description}`;
+  sizeInfo.innerText = race.size_description;
 
-  console.log(race.alignment);
+  const languageInfo = document.querySelector('#language-info');
+  languageInfo.innerText = race.language_desc; 
+  
+  const languages = race.languages.reduce((acc, curr) => {
+    
+    console.log(curr);
+    acc = `${acc} ${curr.name}.`
+    return acc;
+  }, '');
+
+  const langYouSpeak = document.querySelector('#languages-uspeak');
+  langYouSpeak.innerText = languages;
 }
 
 
