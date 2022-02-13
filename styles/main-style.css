@@ -168,13 +168,14 @@ article h2 {
     background-position: bottom;
     background-size: cover;
     display: flex;
-    justify-content: left;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
 }
 
 .text-library-article {
     width: 40%;
-    height: 560px;
+    height: 500px;
     padding: 20px;
 }
 
@@ -188,8 +189,7 @@ article h2 {
 
 .div-button-library {
     display: flex;
-    height: 100%;
-    width: 60%;
+    width: 40%;
     align-items: center;
     justify-content: center;
 }
