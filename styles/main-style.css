@@ -160,6 +160,7 @@ article h2 {
     padding-bottom: 20px;
     font-weight: 700;
 }
+
 /*========================LIBRARY SEARCH*/
 
 .library-search {
@@ -381,6 +382,74 @@ article h2 {
 
 .button-to-create-character p {
     color: white;
+}
+
+/*========================Roll Your Dices*/
+
+.roll-your-dices {
+    display: flex;
+    background-image: url('../imgs/dices.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.div-roll-your-dices {
+    display: flex;
+    width: 50%;
+    height: 800px;
+}
+
+.article-roll-your-dices {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 50%;
+}
+
+.article-text-dices {
+    padding: 0;
+    height: 50%;
+}
+
+.article-text-dices {
+    height: 400px;
+    padding: 20px;
+    color:  white;
+}
+
+.text-dices {
+    font-size: 30px;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.div-button {
+    display: flex;
+    height: 50px;
+    width: 300px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid lightgray;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px black;
+    opacity: 1;
+    color: white;
+    margin: 30px;
+}
+
+.div-button:hover {
+    opacity: 1;
+    width: 400px;
+    height: 75px;
+    font-size: 30px;
+    transition: 500ms;
 }
 
 footer {
