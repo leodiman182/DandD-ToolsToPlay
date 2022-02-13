@@ -106,6 +106,13 @@ select {
     border: 1px solid black;
 }
 
+#proficiencies-choices, #what-u-get, #spellOptions,  #equip-u-get {
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    
+}
+
 /*========================FOOTER*/
 /* 
 footer {
