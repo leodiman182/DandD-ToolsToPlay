@@ -511,12 +511,22 @@ const saveCharacter = (event) => {
       id: 'your-Race', 
       name: 'Race: ',
       content: yourRace, 
+    }, 
+    {
+      id: 'your-age', 
+      name: 'Age:',
+      content: yourAge, 
+    }, 
+    {
+      id: 'your-size', 
+      name: 'Size:', 
+      content: yourSize,
     }
 
-
-    , yourAge, yourSize, yourLanguages, 
-    yourSpeed, yourTraits, yourClass, yourSubClass, yourAlignment,
-    yourSkills, yourChosenSkills, yourEquipments, startinEquipment ]
+  ]
+  //  yourSize, yourLanguages, 
+  //   yourSpeed, yourTraits, yourClass, yourSubClass, yourAlignment,
+  //   yourSkills, yourChosenSkills, yourEquipments, startinEquipment ]
 
   // console.log(`${yourName} : ${yourAge} ${yourRace}, ${yourClass}, ${yourSubClass}, ${yourAlignment}`);
   console.log([yourName, yourRace, yourAge, yourSize, yourLanguages, 
