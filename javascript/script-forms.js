@@ -476,6 +476,23 @@ const getChosenSkills = () => {
   return selectedSkills.join(', ');
 }
 
+const createCharacter = (character) => { 
+  const forms = document.querySelector('form'); 
+  forms.innerHTML = '';
+
+  const createDiv = document.createElement('div');
+  createDiv.id = 'your-character'; 
+  forms.appendChild(createDiv); 
+
+  character.forEach((item) => {
+    const newP = document.createElement('p'); 
+    newP.id = item.id; 
+    newP.innerText = item.name ? `${item.name} ${item.content}` : item.content; 
+    createDiv.appendChild(newP);
+  })
+console.log('ois');
+}
+
 const saveCharacter = (event) => {
   event.preventDefault(); 
   // console.log('oie');
@@ -521,19 +538,61 @@ const saveCharacter = (event) => {
       id: 'your-size', 
       name: 'Size:', 
       content: yourSize,
+    }, 
+    { 
+      id: 'your-languages',
+      content: yourLanguages,
+    }, 
+    {
+      id: 'your-speed',  
+      content: yourSpeed,
+    }, 
+    {
+      id: 'your-traits',
+      content: yourTraits,
+    },
+    {
+      id: 'your-class',
+      name: 'Class:',
+      content: yourClass,
+    },
+    {
+      id: 'your-subclass',
+      name: 'Subclass:',
+      content: yourSubClass,
+    },
+    {
+      id: 'your-alignment', 
+      name: 'Alignment:',
+      content: yourAlignment,
+    }, 
+    {
+      id: 'your-skills', 
+      content: yourSkills,
+    }, 
+    { 
+      id: 'chosen-skills',
+      name: "Class skills you've chosen:",
+      content: yourChosenSkills,
+    }, 
+    {
+      id: 'your-equipments',
+      name: 'Your equipments: ',
+      content: yourEquipments,
+    }, 
+    {
+      id: 'starting-equipments',
+      content: startinEquipment,
     }
-
   ]
-  //  yourSize, yourLanguages, 
-  //   yourSpeed, yourTraits, yourClass, yourSubClass, yourAlignment,
-  //   yourSkills, yourChosenSkills, yourEquipments, startinEquipment ]
 
   // console.log(`${yourName} : ${yourAge} ${yourRace}, ${yourClass}, ${yourSubClass}, ${yourAlignment}`);
-  console.log([yourName, yourRace, yourAge, yourSize, yourLanguages, 
-    yourSpeed, yourTraits, yourClass, yourSubClass, yourAlignment,
-    yourSkills, yourChosenSkills, yourEquipments, startinEquipment ]);
+  // console.log([yourName, yourRace, yourAge, yourSize, yourLanguages, 
+  //   yourSpeed, yourTraits, yourClass, yourSubClass, yourAlignment,
+  //   yourSkills, yourChosenSkills, yourEquipments, startinEquipment ]);
+  console.log(yourCharacter);
 
-
+  console.log(createCharacter(yourCharacter));
 }
 
 const btnSumbit = document.querySelector('#save');
