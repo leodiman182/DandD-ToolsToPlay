@@ -1,5 +1,5 @@
-const fetch = require("node-fetch");
-const fetchOptions = require('../helpers/fetchOptions');
+import fetch from "node-fetch";
+import fetchOptions from '../helpers/fetchOptions';
 
 const expected = {
     "index": "dragonborn",
@@ -62,7 +62,7 @@ const expected = {
     "url": "/api/races/dragonborn"
 };
 
-const testRaceDragonborn = fetchOptions('races/dragonborn');
+console.log(fetchOptions('races/dragonborn'));
 
 describe('Test if the function fetchOptions', () => {
     it('has the type "function".', async () => {
@@ -74,12 +74,12 @@ describe('Test if the function fetchOptions', () => {
         expect.assertions(1);
         await testRaceDragonborn;
 
-        expect(typeof await testRaceDragonborn).toBe('object');
+        expect(typeof testRaceDragonborn).toBe('object');
     });
 
     it('uses the method "fetch".', async () => {
         expect.assertions(1);
-        await testRaceDragonborn;
+        testRaceDragonborn;
 
         expect(fetch).toHaveBeenCalled();
     });
@@ -87,14 +87,14 @@ describe('Test if the function fetchOptions', () => {
     it('uses the method "fetch" with the correct endpoint ("https://www.dnd5eapi.co/api/races/dragonborn")', async () => {
         expect.assertions(1);
         const url = 'https://www.dnd5eapi.co/api/races/dragonborn';
-        await testRaceDragonborn;
+        testRaceDragonborn;
 
         expect(fetch).toHaveBeenCalledWith(url);
     });
 
     it(', when called with the parameter "races/dragonborn", returns the expected object', async () => {
         expect.assertions(1);
-        await testRaceDragonborn;
+        testRaceDragonborn;
 
         expect(testRaceDragonborn).resolves.toEqual(expected);
     });

@@ -19,12 +19,13 @@
   },
   "homepage": "https://github.com/leodiman182/DandD-ToolsToPlay#readme",
   "devDependencies": {
+    "@types/node-fetch": "^3.0.3",
     "jest": "^27.5.1"
   },
   "dependencies": {
     "latest": "^0.2.0",
     "n": "^8.0.2",
-    "node-fetch": "^3.2.0",
+    "node-fetch": "^2.6.7",
     "update": "^0.7.4"
   }
 }
