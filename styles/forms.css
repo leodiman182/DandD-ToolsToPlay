@@ -112,8 +112,7 @@ select, #name-choice, #choose-age, #choose-size {
 }
 
 #proficiencies-choices, 
-#what-u-get,
-#spellOptions, 
+#what-u-get, 
 #equip-u-get, 
 #equipment-options, 
 #traits-uget,
@@ -126,6 +125,29 @@ select, #name-choice, #choose-age, #choose-size {
     padding-top: 13px;
 }
 
+#spellOptions {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+
+    padding-top: 13px;
+}
+
+#spellOptions p {
+    width: 100%;
+}
+#spellOptions label {
+    display: flex;
+    width: 50%; 
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+#spellOptions input {
+    margin-right: 7px ;
+}
 
 /*========================FOOTER*/
 /* 
