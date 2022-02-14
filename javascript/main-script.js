@@ -1,3 +1,18 @@
+/*============= ESCONDER MENU AO ROLAR PÁGINA */
+
+const lastScrollTop = 0;
+const navbar = document.querySelector('header');
+
+window.addEventListener('scroll', () => {  
+  const scrollTop = window.scrollY;  
+
+  if (scrollTop > lastScrollTop) {
+    navbar.style.top = '-150px'    
+  } else {
+    navbar.style.top = '0';
+  }
+})
+
 // Inicio do SlideSow
 // https://www.w3schools.com/howto/howto_js_slideshow.asp
 

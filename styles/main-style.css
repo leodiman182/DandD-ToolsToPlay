@@ -46,6 +46,7 @@ header {
     width: 100%;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.800);
+    transition: 0.5s;
 }
 
 header a .create-character {
@@ -77,13 +78,13 @@ header a .create-character {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .navigation-links ul li {
     opacity: 0.8;
     transition: 0.2s;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .navigation-links ul li a {
@@ -105,7 +106,7 @@ header a .create-character {
 
 .intro {
     display: flex;
-    height: 1000px;
+    height: 900px;
     flex-direction: column;
     background-image: url("../imgs/background.jpg");
     background-position: center;
