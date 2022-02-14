@@ -69,7 +69,13 @@ header a .create-character {
 
 .main-form {
     margin-top: 20vh;
-    height: 70vh;
+    height: 100%;
+}
+
+.forms-title {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
 }
 
 form {
@@ -77,7 +83,8 @@ form {
     flex-direction: column;
     width: 70%;
     margin: auto;
-    padding-top: 30px;
+    padding: 10px;    
+    border-radius: 5px;
 }
 
 select, #name-choice, #choose-age, #choose-size {
@@ -140,6 +147,15 @@ select, #name-choice, #choose-age, #choose-size {
     padding-top: 7px;
 }
 
+#bard-skills label {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 7px;
+} 
+
 #proficiencies-choices input {
     margin-right: 7px ;
 }
@@ -172,15 +188,14 @@ select, #name-choice, #choose-age, #choose-size {
 }
 
 /*========================FOOTER*/
-/* 
+
 footer {
-    height: 10vh;
+    height: 100px;
     background-color: black;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;      
 }
 
 footer button {
@@ -198,4 +213,10 @@ footer button a {
 
 footer button:hover {    
     opacity: 1;
-} */
+}
+
+/*========================AFTER CREATING FORM*/
+
+#your-character p {
+    padding: 13px
+}

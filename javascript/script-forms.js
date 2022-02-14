@@ -66,6 +66,52 @@ const equipmentsYouGet = async () => {
   })
 };
 
+// adds equipments by class - incomplete 
+const equipmentsYouChoose = async () => {
+  // clear equipments 
+  const chosenClass = document.querySelector('#classes').value;
+  const equipmentOptions = document.querySelector('#equipment-options');
+  equipmentOptions.innerHTML = ''; 
+
+  // create description
+  const createP = document.createElement('p'); 
+  createP.innerText = 'Choose your equipments:'
+  equipmentOptions.appendChild(createP);
+
+  // get data from api 
+  const url = `classes/${chosenClass}`
+  const getEquipments = (await fecthOptions(url)).starting_equipment_options;
+  // console.log(getEquipments);
+  
+  // create choice select 
+  getEquipments.forEach((choice, index) => {
+    const createSelect = document.createElement('select'); 
+    createSelect.id = `equipment${index + 1}`; 
+    createSelect.className = 'equipment-choice';
+    equipmentOptions.appendChild(createSelect);
+
+    // create options for each select choice 
+    choice.from.forEach((option) => {
+      // helps me access the information on the api 
+
+      const firstKeyOpt = Object.keys(option)[0];
+      const firstKeyEqp = Object.keys(option[firstKeyOpt]);
+      // console.log(option[firstKeyOpt]);
+      // console.log(firstKeyEqp);
+
+      // getting option name from different object formats on the api    
+      const differentNameEqp = firstKeyEqp[2] === 'from' ? option[firstKeyOpt].from.equipment_category.name : 'oi';
+      const otherNameEqp = firstKeyEqp[0] === 'equipment' ?  option[firstKeyOpt].equipment.name : differentNameEqp; 
+      const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : otherNameEqp; 
+    
+      // creating option
+      const createOption = document.createElement('option'); 
+      createOption.innerText = nameEquiptment;
+      createSelect.appendChild(createOption);
+    })
+  })
+}
+
 // gets description of the ability you use to make spells
 const abilityInfo = async (ability) => {
   const url = `ability-scores/${ability}`; 
@@ -290,50 +336,7 @@ const skillsToChoose = async () => {
 }
 
 
-// adds equipments by class - incomplete 
-const equipmentsYouChoose = async () => {
-  // clear equipments 
-  const chosenClass = document.querySelector('#classes').value;
-  const equipmentOptions = document.querySelector('#equipment-options');
-  equipmentOptions.innerHTML = ''; 
 
-  // create description
-  const createP = document.createElement('p'); 
-  createP.innerText = 'Choose your equipments:'
-  equipmentOptions.appendChild(createP);
-
-  // get data from api 
-  const url = `classes/${chosenClass}`
-  const getEquipments = (await fecthOptions(url)).starting_equipment_options;
-  // console.log(getEquipments);
-  
-  // create choice select 
-  getEquipments.forEach((choice, index) => {
-    const createSelect = document.createElement('select'); 
-    createSelect.id = `equipment${index + 1}`; 
-    equipmentOptions.appendChild(createSelect);
-
-    // create options for each select choice 
-    choice.from.forEach((option) => {
-      // helps me access the information on the api 
-
-      const firstKeyOpt = Object.keys(option)[0];
-      const firstKeyEqp = Object.keys(option[firstKeyOpt]);
-      // console.log(option[firstKeyOpt]);
-      // console.log(firstKeyEqp);
-
-      // getting option name from different object formats on the api    
-      const differentNameEqp = firstKeyEqp[2] === 'from' ? option[firstKeyOpt].from.equipment_category.name : 'oi';
-      const otherNameEqp = firstKeyEqp[0] === 'equipment' ?  option[firstKeyOpt].equipment.name : differentNameEqp; 
-      const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : otherNameEqp; 
-    
-      // creating option
-      const createOption = document.createElement('option'); 
-      createOption.innerText = nameEquiptment;
-      createSelect.appendChild(createOption);
-    })
-  })
-}
 
 const raceOptions = document.querySelector('#races');
 
@@ -383,12 +386,13 @@ const traitsYouGet = async () => {
 
   // description
   const yourTraits = document.querySelector('#traits');
-  yourTraits.innerHTML = race.traits.length > 1 ? 'Traits you get:' : '';
+  yourTraits.innerHTML = race.traits.length > 1 ? 'Traits of your race:' : '';
 
   // create traits list 
   race.traits.forEach((trait) => {
     const createLi = document.createElement('li');
     createLi.innerText = trait.name; 
+    createLi.className = 'trait';
     yourTraits.appendChild(createLi);
   })
   // console.log(race.traits);
@@ -417,32 +421,179 @@ chosenClass.addEventListener('change', spellsYouGet);
 // traits by race
 raceOptions.addEventListener('change', traitsYouGet);
 
-// save character on local Storage 
+// preparing to save character on local Storage 
+
+// gets text input value 
 const getTextInput = (text) => {
   const textInput = document.getElementById(text); 
   const yourText = textInput.value;
-  console.log(yourText);
+  // console.log(yourText);
   return yourText;
 }
 
+// gets selected value
 const getSelectedOption = (select) => {
   const selectOptions = document.getElementById(select); 
   const yourChoice = selectOptions.options[selectOptions.selectedIndex].innerText; 
   return yourChoice; 
 }
 
+// gets chosen equipments
+const getYourEquipments = () => {
+  const equipmentOptions = document.querySelectorAll('.equipment-choice');
+  const chosenEquipments = []; 
+
+  equipmentOptions.forEach((option) => {
+    // console.log(option.options[option.selectedIndex].innerText);
+    const equipment = option.options[option.selectedIndex].innerText; 
+    chosenEquipments.push(equipment);
+  })
+  
+  return chosenEquipments.join(', ');
+}
+
+// get traits 
+const getTraits = () => {
+  const description = document.querySelector('#traits').innerText;
+  
+  return description
+}
+
+// get chosen skills
+const getChosenSkills = () => {
+  const skills = document.querySelectorAll('.skill-to-choose'); 
+  const selectedSkills = [];
+  
+  // get checked skills 
+  skills.forEach((skill) => {
+    if (skill.checked === true) {
+      const nameSkill = skill.previousSibling;
+      selectedSkills.push(nameSkill.data);
+      // console.log(nameSkill.data);
+    }
+
+  })
+  return selectedSkills.join(', ');
+}
+
+const createCharacter = (character) => { 
+  const forms = document.querySelector('form'); 
+  forms.innerHTML = '';
+
+  const createDiv = document.createElement('div');
+  createDiv.id = 'your-character'; 
+  forms.appendChild(createDiv); 
+
+  character.forEach((item) => {
+    const newP = document.createElement('p'); 
+    newP.id = item.id; 
+    newP.innerText = item.name ? `${item.name} ${item.content}` : item.content; 
+    createDiv.appendChild(newP);
+  })
+console.log('ois');
+}
+
 const saveCharacter = (event) => {
   event.preventDefault(); 
-  console.log('oie');
+  // console.log('oie');
   const yourName = getTextInput('name-choice'); 
-  const yourAge = getTextInput('choose-age');
   const yourRace = getSelectedOption('races'); 
+  
+  const yourAge = getTextInput('choose-age');
+  const yourSize = getTextInput('choose-size');
+  const yourLanguages = document.getElementById('languages-uspeak').innerText;
+  const yourSpeed = document.getElementById('speed').innerText;
+  const yourTraits = document.querySelector('#traits').innerText;
+  
   const yourClass = getSelectedOption('classes');
   const yourSubClass = getSelectedOption('subclasses');
   const yourAlignment = getSelectedOption('alignments'); 
-  console.log(`${yourName} : ${yourAge} ${yourRace}, ${yourClass}, ${yourSubClass}, ${yourAlignment}`);
-}
+  const yourSkills = document.querySelector('#proficiencies-uget').innerText;
+  const yourChosenSkills = getChosenSkills();
+  const yourEquipments = getYourEquipments();
+  const startinEquipment = document.querySelector('#equipments-uget').innerText;
 
+  const yourCharacter = [
+     {
+      id: 'your-name', 
+      name: 'Name: ',
+      content: yourName,
+    }, 
+    {
+      id: 'your-Race', 
+      name: 'Race: ',
+      content: yourRace, 
+    }, 
+    {
+      id: 'your-Race', 
+      name: 'Race: ',
+      content: yourRace, 
+    }, 
+    {
+      id: 'your-age', 
+      name: 'Age:',
+      content: yourAge, 
+    }, 
+    {
+      id: 'your-size', 
+      name: 'Size:', 
+      content: yourSize,
+    }, 
+    { 
+      id: 'your-languages',
+      content: yourLanguages,
+    }, 
+    {
+      id: 'your-speed',  
+      content: yourSpeed,
+    }, 
+    {
+      id: 'your-traits',
+      content: yourTraits,
+    },
+    {
+      id: 'your-class',
+      name: 'Class:',
+      content: yourClass,
+    },
+    {
+      id: 'your-subclass',
+      name: 'Subclass:',
+      content: yourSubClass,
+    },
+    {
+      id: 'your-alignment', 
+      name: 'Alignment:',
+      content: yourAlignment,
+    }, 
+    {
+      id: 'your-skills', 
+      content: yourSkills,
+    }, 
+    { 
+      id: 'chosen-skills',
+      name: "Class skills you've chosen:",
+      content: yourChosenSkills,
+    }, 
+    {
+      id: 'your-equipments',
+      name: 'Your equipments: ',
+      content: yourEquipments,
+    }, 
+    {
+      id: 'starting-equipments',
+      content: startinEquipment,
+    }
+  ]
+
+  // console.log(`${yourName} : ${yourAge} ${yourRace}, ${yourClass}, ${yourSubClass}, ${yourAlignment}`);
+  // console.log([yourName, yourRace, yourAge, yourSize, yourLanguages, 
+  //   yourSpeed, yourTraits, yourClass, yourSubClass, yourAlignment,
+  //   yourSkills, yourChosenSkills, yourEquipments, startinEquipment ]);
+  console.log(yourCharacter);
+
+  console.log(createCharacter(yourCharacter));
+}
 
 const btnSumbit = document.querySelector('#save');
 btnSumbit.addEventListener('click', saveCharacter); 
