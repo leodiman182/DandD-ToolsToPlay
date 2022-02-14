@@ -106,7 +106,7 @@ header a .create-character {
 
 .intro {
     display: flex;
-    height: 900px;
+    height: 800px;
     flex-direction: column;
     background-image: url("../imgs/background.jpg");
     background-position: center;
@@ -124,22 +124,23 @@ header a .create-character {
     align-items: center;
     border-radius: 10px;
     height: auto;
-    width: 85%;
+    width: 80%;
+    margin-top: 100px;
 }
 
-article {
+.intro-article {
     height: 100%;
     text-align: center;
     padding: 35px;    
 }
 
-article h2 {
+.intro-article h2 {
     margin: 10px 0;
     font-size: 1.8rem;
 }
 
 .text-intro {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 /*========================DIVIDER*/
@@ -165,35 +166,33 @@ article h2 {
 /*========================LIBRARY SEARCH*/
 
 .library-search {
-    height: 800px;
+    height: 650px;
     background-image: url("../imgs/spellbook.jpg");
     background-position: bottom;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
+    justify-content: center;    
 }
 
 .text-library-article {
-    width: 40%;
-    height: 500px;
-    padding: 20px;
+    width: 50%;
+    margin-left: 30px;
 }
 
 .text-library {
-    font-size: 30px;
-    line-height: 60px;
-    text-align: center;
+    font-size: 1.6rem;
+    line-height: 50px;
+    text-align: left;
     color: white;
-    padding: 30px;
+    padding: 50px;
 }
 
 .div-button-library {
     display: flex;
-    width: 40%;
     align-items: center;
     justify-content: center;
+    margin-right: 50px;
 }
 
 .link-to-library-search {
@@ -214,14 +213,11 @@ article h2 {
     opacity: 1;
     color: white;
     opacity: 0.5;
+    transition: 0.2s;
 }
 
 .button-to-library-search:hover {
-    opacity: 1;
-    width: 400px;
-    height: 75px;
-    font-size: 30px;
-    transition: 500ms;
+    opacity: 1;    
 }
 
 /*========================CREATE CHARACTER*/
