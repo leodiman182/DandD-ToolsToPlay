@@ -110,8 +110,7 @@ select, #name-choice, #choose-age, #choose-size {
     color: black;
     border: 1px solid black;
 }
-
-#proficiencies-choices, 
+ 
 #what-u-get, 
 #equip-u-get, 
 #equipment-options, 
@@ -125,11 +124,34 @@ select, #name-choice, #choose-age, #choose-size {
     padding-top: 13px;
 }
 
+#proficiencies-choices { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 13px;
+}
+
+#proficiencies-choices label { 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 7px;
+}
+
+#proficiencies-choices input {
+    margin-right: 7px ;
+}
+
+#proficiencies-uget li {
+    padding-top: 7px;
+}
+
 #spellOptions {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-
     padding-top: 13px;
 }
 
