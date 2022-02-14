@@ -337,22 +337,28 @@ const equipmentsYouChoose = async () => {
 const raceOptions = document.querySelector('#races');
 
 const racesDescription = async () => {
+  // get chosen race 
   const chosenRace = raceOptions.value;
   const url = `races/${chosenRace}`;
   const race = await fecthOptions(url)
 
+  // get alignment description
   const alignments = document.querySelector('#alignments-info'); 
   alignments.innerText = race.alignment;
 
+  // get age description
   const ageInfo = document.querySelector('#age-info'); 
   ageInfo.innerText = race.age;
 
+  // get size description
   const sizeInfo = document.querySelector('#size-info'); 
   sizeInfo.innerText = race.size_description;
 
+  // get language description
   const languageInfo = document.querySelector('#language-info');
   languageInfo.innerText = race.language_desc; 
   
+  // get languages you speak
   const languages = race.languages.reduce((acc, curr) => {
     //console.log(curr);
     acc = `${acc} ${curr.name}.`
@@ -362,24 +368,28 @@ const racesDescription = async () => {
   const langYouSpeak = document.querySelector('#languages-uspeak');
   langYouSpeak.innerText = `Languages you speak: ${languages}`;
 
+  // get speed 
   const speed = document.querySelector('#speed');
   speed.innerText = `Speed: ${race.speed}`
 }
 
 const traitsYouGet = async () => {
+  // get chosen race
   const chosenRace = raceOptions.value;
   const url = `races/${chosenRace}`;
   const race = await fecthOptions(url)
 
+  // description
   const yourTraits = document.querySelector('#traits');
   yourTraits.innerHTML = race.traits.length > 1 ? 'Traits you get:' : '';
 
+  // create traits list 
   race.traits.forEach((trait) => {
     const createLi = document.createElement('li');
     createLi.innerText = trait.name; 
     yourTraits.appendChild(createLi);
   })
-  console.log(race.traits);
+  // console.log(race.traits);
 };
 
 //console.log(getProficiencies); 
