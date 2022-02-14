@@ -206,3 +206,10 @@ footer button a {
 footer button:hover {    
     opacity: 1;
 }
+
+/*========================AFTER CREATING FORM*/
+
+
+#your-character p {
+    padding: 13px
+}
