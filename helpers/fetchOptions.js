@@ -8,4 +8,9 @@ const fetchOptions = async (search) => {
     return data; 
 }
 
-module.exports = fetchOptions;
+if (typeof module !== 'undefined') {
+    module.exports = {
+        fetchOptions,
+    };
+};
+

@@ -2,6 +2,7 @@
   "name": "dandd-toolstoplay",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -21,6 +22,9 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
-    "node-fetch": "^3.2.0"
+    "latest": "^0.2.0",
+    "n": "^8.0.2",
+    "node-fetch": "^3.2.0",
+    "update": "^0.7.4"
   }
 }
