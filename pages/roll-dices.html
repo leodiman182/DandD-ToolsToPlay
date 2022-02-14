@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--FONTS-->
+    <link rel="stylesheet" href="../styles/roll-dices.css">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;800&family=Oldenburg&family=Syne+Tactile&display=swap" rel="stylesheet">
+
+    <title>Roll Dices</title>
+</head>
+<body>
+  <header>
+    <div class="logo-header">
+      <a href="../pages/main.html">
+        <img class="logo" src="../imgs/logoDnD.png" alt="Logo DnD">
+      </a>
+    </div>
+  </header>
+    <main>
+      <div class="container">
+        <section class="choose-dice">
+          <div value="4" class="um-d-quatro container-dice"><p class="paragraph-dice" style="opacity: 0">4</p>1d4</div>
+          <div class="um-d-seis container-dice"><p class="paragraph-dice" style="opacity: 0">6</p>1d6</div>
+          <div class="um-d-oito container-dice"><p class="paragraph-dice" style="opacity: 0">8</p>1d8</div>
+          <div class="um-d-dez container-dice"><p class="paragraph-dice" style="opacity: 0">10</p>1d10</div>
+          <div class="um-d-doze container-dice"><p class="paragraph-dice" style="opacity: 0">12</p>1d12</div>
+          <div class="um-d-vinte container-dice"><p class="paragraph-dice" style="opacity: 0">20</p>1d20</div>
+          <div class="um-d-cem container-dice"><p class="paragraph-dice" style="opacity: 0">100</p>1d100</div>
+        </section>
+        <section class="show-dice-rolling">
+          <p class="show-dice-result-title">Rolls Here</p>
+        </section>
+      </div>
+      <section class="roll-dice-chat">
+
+      </section>
+    </main>
+
+    <!-- Inicio Modal -->
+    <div class="modal">
+      <p class="paragraph-dice test" style="opacity: 0"></p>
+      <div class="header-modal">
+        <h4>Choose values for:</h4>
+        <p class="close-modal">X</p>
+      </div>
+      <div class="main-modal" >
+        <div class="modifier-input">
+          <label for="modifier">Modifier<br>
+            <input id="modifier" type="text" placeholder="Modifier">
+          </label>
+        </div>
+        <div class="number-of-dices-input">
+          <label for="number-of-dices">Number of Dices<br>
+            <input id="number-of-dices" type="text" placeholder="Number of Dices">
+          </label>
+        </div>
+        <div class="button-modal">
+          <div class="accept-button button">
+            <p>Accept</p>
+          </div>
+          <div class="cancel-button button close-modal">
+            <p>Cancel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Final Modal -->
+
+  <footer>
+    <div>
+      <p>Developed by: <strong>Isabela Nery | Leonardo Diman | Paulo Victor</strong></p>
+    </div>
+  </footer>  
+  <script src="../javascript/roll-dices.js"></script>
+</body>
+</html>

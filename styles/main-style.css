@@ -452,6 +452,8 @@ article h2 {
     transition: 500ms;
 }
 
+/*========================Footer*/
+
 footer {
     display: flex;
     justify-content: center;

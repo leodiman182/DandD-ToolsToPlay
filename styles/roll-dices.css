@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oldenburg', cursive;
+    /*font-family: 'Syne Tactile', cursive;
+    font-family: 'Cinzel', serif;
+    */
+}
+
+html , body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+main {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*========================HEADER*/
+
+header {
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    z-index: 9;
+    flex-direction: column;
+    display: flex;
+    height: auto;
+    height: 100px;
+    padding: 60px;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+header a .create-character {
+    width: 100%;
+}
+
+.logo {
+    width: 300px;
+    height: 100px;
+}
+
+.logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}   
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.choose-dice {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    height: 100%;
+    min-width: 100px;
+}
+
+.choose-dice div p {
+    width: 0;
+}
+
+.show-dice-rolling {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 90%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.show-dice-result {
+    padding: 10px;
+    font-size: 20px;
+    
+}
+
+.show-dice-result-title {
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.roll-dice-chat {
+    background-color: green;
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    width: 100%;
+    height: 20%;
+}
+
+.container-dice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    cursor: pointer;
+    background-color: midnightblue;
+    color: white;
+}
+
+/*========================Modal*/
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-radius: 5px;
+    top: 35%;
+    left: 42%;
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    opacity: 0;
+}
+
+.header-modal p {
+    position: absolute;
+    right: 0;
+    padding: 5px;
+    font-weight: 700;
+    background-color: darkred;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+    display: block;
+}
+
+.header-modal h4 {
+    padding-left: 10px;
+}
+
+.header-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 5px 5px 0 0;
+}
+
+.main-modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: 100%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.modifier-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    font-weight: 700;
+}
+
+#modifier {
+    font-size: 20px;
+}
+
+.number-of-dices-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    font-weight: 700;
+}
+
+#number-of-dices {
+    font-size: 20px;
+}
+
+.button-modal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20%;
+    margin-bottom: 5px;
+}
+
+.cancel-button {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: darkblue;
+    box-shadow: 2px 1px 5px black;
+    cursor: pointer;
+}
+
+.accept-button {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: darkred;
+    box-shadow: 2px 1px 5px black;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: 0px 0px 0px black;
+}
+
+/*========================Footer*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 80px;    
+    background-color: rgba(0, 0, 0, 1);
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+footer div p strong {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7px;
+}
+
+footer div p {
+    font-size: 1.25rem;    
+}
