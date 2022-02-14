@@ -7,10 +7,14 @@
   "scripts": {
     "test": "jest"
   },
+  "jest":{
+    "testEnvironment": "jsdom"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leodiman182/DandD-ToolsToPlay.git"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -28,4 +32,5 @@
     "node-fetch": "^2.6.7",
     "update": "^0.7.4"
   }
+  
 }

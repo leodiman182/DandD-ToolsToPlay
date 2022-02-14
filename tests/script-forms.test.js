@@ -1,5 +1,7 @@
-import fetch from "node-fetch";
-import fetchOptions from '../helpers/fetchOptions';
+// import fetch from "node-fetch";
+const fetch = require('node-fetch')
+// import fetchOptions from '../helpers/fetchOptions';
+const fetchOptions = require('../helpers/fetchOptions')
 
 const expected = {
     "index": "dragonborn",
@@ -62,12 +64,10 @@ const expected = {
     "url": "/api/races/dragonborn"
 };
 
-console.log(fetchOptions('races/dragonborn'));
-
 describe('Test if the function fetchOptions', () => {
     it('has the type "function".', async () => {
         expect.assertions(1);        
-        expect(typeof fetchOptions).toBe('function');
+        expect(typeof await fetchOptions()).toBe('function');
     });
 
     it('returns an element with the "object" type', async () => {

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--FONTS-->
+    <link rel="stylesheet" href="../styles/library-search.css">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;800&family=Oldenburg&family=Syne+Tactile&display=swap" rel="stylesheet">
+    <title>Library Search</title>
+</head>
+<body>
+  <header>
+    <div class="logo-header">
+      <a href="../pages/main.html">
+      <img class="logo" src="../imgs/logoDnD.png" alt="Logo DnD">
+      </a>
+    </div>
+  </header>
+  <main>
+    <section class="show-database">
+      <div class="search-database">
+          <label for="input-search">
+              <input id="input-search" type="text" placeholder="Search here">
+          </label>
+          <select name="titles-database" id="select-search-database">
+            <option value="" disabled selected>Select</option>
+            <option value="ability-scores">ability-scores</option>
+            <option value="alignments">alignments</option>
+            <option value="classes">classes</option>
+            <option value="conditions">conditions</option>
+            <option value="damage-types">damage-types</option>
+            <option value="quipment-categories">quipment-categories</option>
+            <option value="equipment">equipment</option>
+            <option value="feats">feats</option>
+            <option value="features">features</option>
+            <option value="languages">languages</option>
+            <option value="magic-items">magic-items</option>
+            <option value="magic-schools">magic-schools</option>
+            <option value="monsters">monsters</option>
+            <option value="proficiencies">proficiencies</option>
+            <option value="races">races</option>
+            <option value="rules">rules</option>
+            <option value="rule-sections">rule-sections</option>
+            <option value="skills">skills</option>
+            <option value="spells">spells</option>
+            <option value="subclasses">subclasses</option>
+            <option value="subraces">subraces</option>
+            <option value="traits">traits</option>
+          </select>
+          <div class="btn-library-search">Search</div>
+      </div>
+      <section class="library-list-database">
+
+      </section>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <p>Developed by: <strong>Isabela Nery | Leonardo Diman | Paulo Victor</strong></p>
+    </div>
+  </footer> 
+  <script src="../javascript/library-search.js"></script>
+  <script type="module" src="../helpers/fetchOptions.js"></script>
+</body>
+</html>

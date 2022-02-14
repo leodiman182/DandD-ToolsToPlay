@@ -66,3 +66,4 @@ const rollDice = () => {
 
 rollDice();
 
+module.exports = {rollDice, modalOff};
