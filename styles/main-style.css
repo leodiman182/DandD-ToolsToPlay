@@ -216,6 +216,11 @@ header a .create-character {
     transition: 0.2s;
 }
 
+.button-to-library-search:active {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+
 .button-to-library-search:hover {
     opacity: 1;    
 }
@@ -388,27 +393,25 @@ header a .create-character {
     background-image: url('../imgs/dices.jpg');
     background-position: center;
     background-size: cover;
+    height: 550px;
 }
 
 .div-roll-your-dices {
     display: flex;
-    width: 50%;
-    height: 800px;
+    width: 50%;    
 }
 
-.article-roll-your-dices {
-    height: 800px;
+.article-roll-your-dices {    
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column;    
     align-items: center;
-    padding: 0;
     width: 50%;
 }
 
 .article-text-dices {
-    padding: 0;
-    height: 50%;
+    color: white;
+    padding: 20px;
+    height: 400px;
 }
 
 .article-text-dices {
@@ -418,11 +421,15 @@ header a .create-character {
 }
 
 .text-dices {
-    font-size: 30px;
-    line-height: 60px;
-    text-align: center;
+    font-size: 2rem;
+    line-height: 50px;
+    text-align: right;
     color: white;
-    padding: 30px;
+    padding: 40px;
+    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-width: 1.2px;
+    margin-top: 30px;
+    margin-right: 100px;
 }
 
 .div-button {
@@ -436,17 +443,38 @@ header a .create-character {
     border: 1px solid lightgray;
     cursor: pointer;
     box-shadow: 1px 1px 10px black;
-    opacity: 1;
+    opacity: 0.7;
     color: white;
-    margin: 30px;
+    margin-top: 10px;  
+}
+
+.div-button:active {
+    box-shadow: 0px 0px 0px black;
 }
 
 .div-button:hover {
     opacity: 1;
-    width: 400px;
-    height: 75px;
-    font-size: 30px;
-    transition: 500ms;
+}
+
+/*========================Saved Characters*/
+
+#saved-characters {
+    height: 200px;
+}
+
+#saved-characters h2 {
+    padding: 30px 0;    
+    background-color: black;
+    background-size: 60px;
+    color: white;
+    border-bottom: solid 1px lightgray;
+    border-top: solid 1px lightgray;
+}
+
+#saved-characters p {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 30px;
 }
 
 /*========================Footer*/
