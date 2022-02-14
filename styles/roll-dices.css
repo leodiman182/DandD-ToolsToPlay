@@ -85,7 +85,7 @@ header a .create-character {
 .show-dice-rolling {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     width: 90%;
     height: 100%;

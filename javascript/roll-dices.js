@@ -43,12 +43,12 @@ const rollDice = () => {
     let value = parseInt(paragrathRolledDice.innerHTML);
     let rollResult = Math.floor(Math.random() * value) + 1;
     let finalResult = `Roll: 1d${value} x ${parseInt(numberOfDices.value)} + ${parseInt(modifier.value)} = <b>${(parseInt(rollResult) * parseInt(numberOfDices.value)) + parseInt(modifier.value)}<b>`
-    if (document.getElementsByClassName('show-dice-result').length === 12) {
+    if (document.getElementsByClassName('show-dice-result').length === 11) {
       document.getElementsByClassName('show-dice-result')[0].remove();  
     }
     section.appendChild(paragraphShowResult);
     paragraphShowResult.innerHTML = finalResult;
-    modal.style.opacity = '0'; 
+    modal.style.opacity = '0';
   });
 } 
 
