@@ -1,5 +1,6 @@
 // const fecthOptions = require('.fecthOptions/fecthOptions')
 
+// gets data from API 
 const fecthOptions = async (search) => {
   const url = `https://www.dnd5eapi.co/api/${search}`; 
   const response = await fetch(url); 
@@ -9,7 +10,7 @@ const fecthOptions = async (search) => {
   return data; 
 }
 
-// create different input options from api 
+// creates different input options from api 
 const inputOptions = async (opt) => {
   const options = (await fecthOptions(opt)).results;
   
@@ -25,7 +26,7 @@ const inputOptions = async (opt) => {
   })
 }; 
 
-// add skills you get when you choose your class. \/
+// adds skills you get when you choose your class. \/
 const skillsYouGet = async () => {
   // get class's skills 
   const chosenClass = document.querySelector('#classes').value;
@@ -45,7 +46,7 @@ const skillsYouGet = async () => {
   })
 };
 
-// add equipments you get by class 
+// adds equipments you get by class 
 const equipmentsYouGet = async () => {
   // get class's equipmets
   const chosenClass = document.querySelector('#classes').value;
@@ -65,7 +66,7 @@ const equipmentsYouGet = async () => {
   })
 };
 
-// get description of the ability you use to make spells
+// gets description of the ability you use to make spells
 const abilityInfo = async (ability) => {
   const url = `ability-scores/${ability}`; 
   const data = await fecthOptions(url);
@@ -76,7 +77,7 @@ const abilityInfo = async (ability) => {
   return abilityDescription;
 };
 
-// adds spells options to choose by class 
+// adds spells options to choose, if the class you choose has any 
 const spellsToChoose = async () => { 
   // get class's spells list 
   const chosenClass = document.querySelector('#classes').value;
@@ -113,6 +114,7 @@ const spellsToChoose = async () => {
   })
 };
 
+// adds spells you get, if the class you choose get any 
 const spellsYouGet = async () => {
   // get class
   const chosenClass = document.querySelector('#classes').value;
@@ -151,10 +153,9 @@ const spellsYouGet = async () => {
   }
 };
 
-
 const chosenClass = document.querySelector('#classes'); 
 
-// add subclasses by class 
+// adds subclasses by class 
 const getSubclasses = async () => {
   // get class's subclasses 
   const chosenClass = document.querySelector('#classes').value;
@@ -289,7 +290,7 @@ const skillsToChoose = async () => {
 }
 
 
-// add equipments by class - incomplete 
+// adds equipments by class - incomplete 
 const equipmentsYouChoose = async () => {
   // clear equipments 
   const chosenClass = document.querySelector('#classes').value;
@@ -373,6 +374,7 @@ const racesDescription = async () => {
   speed.innerText = `Speed: ${race.speed}`
 }
 
+// adds traits you get 
 const traitsYouGet = async () => {
   // get chosen race
   const chosenRace = raceOptions.value;
@@ -394,23 +396,71 @@ const traitsYouGet = async () => {
 
 //console.log(getProficiencies); 
 
+// excecuting all functions :
+
+// race options
 inputOptions('races');
-raceOptions.addEventListener('change', racesDescription)
+raceOptions.addEventListener('change', racesDescription);
+// class options
 inputOptions('classes');
-// inputOptions('subclasses');
+// alignments by race
 chosenClass.addEventListener('change', getSubclasses);
 inputOptions('alignments');
-// inputOptions('equipment');
+// equipments by class
 chosenClass.addEventListener('change', equipmentsYouGet);
 chosenClass.addEventListener('change', equipmentsYouChoose);
-// inputOptions('proficiencies');
+// skills by class 
 chosenClass.addEventListener('change', skillsYouGet);
 chosenClass.addEventListener('change', skillsToChoose);
-// chosenClass.addEventListener('change', limitSkillChoices);
-// inputOptions('skills');
+// spells by magic class 
 chosenClass.addEventListener('change', spellsYouGet);
-
+// traits by race
 raceOptions.addEventListener('change', traitsYouGet);
+
+// save character on local Storage 
+const getTextInput = (text) => {
+  const textInput = document.getElementById(text); 
+  const yourText = textInput.value;
+  console.log(yourText);
+  return yourText;
+}
+
+const getSelectedOption = (select) => {
+  const selectOptions = document.getElementById(select); 
+  const yourChoice = selectOptions.options[selectOptions.selectedIndex].innerText; 
+  return yourChoice; 
+}
+
+const saveCharacter = (event) => {
+  event.preventDefault(); 
+  console.log('oie');
+  const yourName = getTextInput('name-choice'); 
+  const yourAge = getTextInput('choose-age');
+  const yourRace = getSelectedOption('races'); 
+  const yourClass = getSelectedOption('classes');
+  const yourSubClass = getSelectedOption('subclasses');
+  const yourAlignment = getSelectedOption('alignments'); 
+  console.log(`${yourName} : ${yourAge} ${yourRace}, ${yourClass}, ${yourSubClass}, ${yourAlignment}`);
+}
+
+
+const btnSumbit = document.querySelector('#save');
+btnSumbit.addEventListener('click', saveCharacter); 
+
+// const yourName = document.getElementById('.name-choice');
+
+// const inputs = [ 
+//   {
+//     id: 'name-choice',
+//     name: 'Name', 
+//     dom: yourName,
+//   }, 
+//   {
+//     id: '', 
+//     name: 'Race', 
+//     dom: 
+//   }
+// ]
 
 
 // get skills description when u select one 
