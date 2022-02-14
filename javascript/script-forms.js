@@ -25,13 +25,13 @@ const inputOptions = async (opt) => {
 }; 
 
 // add proficiencies you get when you choose your class. \/
-const proficienciesYouGet = async () => {
+const skillsYouGet = async () => {
   const chosenClass = document.querySelector('#classes').value;
   const url = `classes/${chosenClass}`;
   const getProficiencies = (await fecthOptions(url)).proficiencies;
 
   const createWhatUGet = document.querySelector('#proficiencies-uget');
-  createWhatUGet.innerText = 'Proficiencies you get:'; 
+  createWhatUGet.innerText = 'Skills you get:'; 
 
   getProficiencies.forEach((proficiency) => {
     // console.log(proficiency);
@@ -104,6 +104,8 @@ const spellsYouGet = async () => {
   const url = `classes/${chosenClass}`;
   const classInfo = await fecthOptions(url);
 
+  const divSpells = document.querySelector('#spellCasting'); 
+  divSpells.display = 'flex';
   const spellAbility = document.querySelector('#spellAbility'); 
   spellAbility.innerHTML = '';
   const levelAbility = document.querySelector('#levelAbility'); 
@@ -154,7 +156,28 @@ const getSubclasses = async () => {
   
 // }
 
-const proficienciesToChoose = async () => {
+const limitSkillChoices = (event) => {
+  const skills = document.querySelectorAll('.skill-to-choose'); 
+  const numberOfChoices = document.querySelector('#number-choices').innerText; 
+  const limitNumber = numberOfChoices.split(' ')[1];
+  const skillsSelected = document.querySelectorAll('.skill-to-choose:checked'); 
+  console.log(skillsSelected);
+  
+  console.log(limitNumber);
+  
+  // const test =
+  // console.log(test);
+  if (skillsSelected.length > limitNumber) {
+    // skills.forEach((skill) => {
+      alert(`You can choose maximum of ${limitNumber} skill${limitNumber > 1 ? 's' : ''}.`); 
+      event.target.checked = false;
+    
+      
+    // console.log('oi');
+  }
+}
+
+const skillsToChoose = async () => {
   const equipmentOptions = document.querySelector('#proficiencies-choices');
   equipmentOptions.innerHTML = ''; 
   
@@ -184,6 +207,8 @@ const proficienciesToChoose = async () => {
     createInput.type = 'checkbox'; 
     createInput.name = 'skill';
     createInput.id = option.index;
+    createInput.className = 'skill-to-choose';
+    createInput.addEventListener('change', limitSkillChoices)
     createLabel.appendChild(createInput);
 
   });
@@ -191,7 +216,7 @@ const proficienciesToChoose = async () => {
   const skills = document.querySelector('#skill-choices');
   
   if(chosenClass === 'bard') {
-    console.log(getProficiencies[1])
+    // console.log(getProficiencies[1])
     const createBardSkills = document.createElement('div'); 
     createBardSkills.id = 'bard-skills'; 
     skills.appendChild(createBardSkills); 
@@ -207,10 +232,11 @@ const proficienciesToChoose = async () => {
       createBardSkills.appendChild(createLabel);
 
       const createInput = document.createElement('input'); 
-    createInput.type = 'checkbox'; 
-    createInput.name = 'bard-skill';
-    createInput.id = option.index;
-    createLabel.appendChild(createInput);
+      createInput.type = 'checkbox'; 
+      createInput.name = 'bard-skill';
+      createInput.id = option.index;
+      createInput.addEventListener('change', limitSkillChoices)
+      createLabel.appendChild(createInput);
     })
     
   }
@@ -223,7 +249,9 @@ const proficienciesToChoose = async () => {
     };
   };
 
+  // limitSkillChoices();
 }
+
 
 // add equipments by class - incomplete 
 const equipmentsYouChoose = async () => {
@@ -244,7 +272,7 @@ const equipmentsYouChoose = async () => {
     equipmentOptions.appendChild(createSelect);
     choice.from.forEach((option) => {
       const firstKeyOpt = Object.keys(option)[0];
-      console.log(option[firstKeyOpt]);
+      // console.log(option[firstKeyOpt]);
       const firstKeyEqp = Object.keys(option[firstKeyOpt]);
       // console.log(firstKeyEqp);
       const differentNameEqp = firstKeyEqp[2] === 'from' ? option[firstKeyOpt].from.equipment_category.name : 'oi';
@@ -255,7 +283,7 @@ const equipmentsYouChoose = async () => {
       // não to conseguindo acessar os nomes que estão em outro lugar \/ sos 
       // const otherNameEqpt = option[firstKeyOpt].equipment.name ? option[firstKeyOpt].equipment.name : option[firstKeyOpt].from.equipment_category.name  
       const nameEquiptment = option[firstKeyOpt].name ? option[firstKeyOpt].name : otherNameEqp; 
-      console.log(nameEquiptment);
+      // console.log(nameEquiptment);
       
       const createOption = document.createElement('option'); 
       createOption.innerText = nameEquiptment;
@@ -315,6 +343,8 @@ const traitsYouGet = async () => {
 };
 
 
+
+
 // const getProficiencies = (await fecthOptions(url)).proficiency_choices;
 // esta birosca é um array com um obj dentro. mas n consigo acessar chamando [0], nem .key --- SOS
 
@@ -330,8 +360,9 @@ inputOptions('alignments');
 chosenClass.addEventListener('change', equipmentsYouGet);
 chosenClass.addEventListener('change', equipmentsYouChoose);
 // inputOptions('proficiencies');
-chosenClass.addEventListener('change', proficienciesYouGet);
-chosenClass.addEventListener('change', proficienciesToChoose);
+chosenClass.addEventListener('change', skillsYouGet);
+chosenClass.addEventListener('change', skillsToChoose);
+// chosenClass.addEventListener('change', limitSkillChoices);
 // inputOptions('skills');
 chosenClass.addEventListener('change', spellsYouGet);
 
