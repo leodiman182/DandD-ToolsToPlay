@@ -15,7 +15,7 @@ html , body {
 
 main {
     display: flex;
-    height: 80%;
+    height: 85%;
     flex-direction: column;
 }
 
@@ -35,7 +35,7 @@ a {
 /*========================HEADER*/
 
 header {
-    border: 1px solid rgba(211, 211, 211, 0.5);
+    background: linear-gradient(to right, black 35%, white 70%);
     z-index: 9;
     flex-direction: column;
     display: flex;
@@ -44,7 +44,6 @@ header {
     padding: 60px;
     width: 100%;
     align-items: center;
-    background-color: rgb(0, 0, 0);
 }
 
 header a .create-character {
@@ -90,6 +89,10 @@ header a .create-character {
     width: 90%;
     height: 100%;
     overflow-y: scroll;
+    background-image: url('../imgs/table.jpeg');
+    background-position: center;
+    background-size: cover;
+    color: white;
 }
 
 .show-dice-result {
@@ -103,29 +106,91 @@ header a .create-character {
     font-size: 24px;
     font-weight: 700;
     text-decoration: underline;
+    color: white;
 }
 
-.roll-dice-chat {
-    background-color: green;
+.roll-dice-control {
+    display: flex;
+    background-color: black;
     border: 1px solid rgba(211, 211, 211, 0.5);
     width: 100%;
     height: 20%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.clear-history-rolls {
+    background-color: darkgoldenrod;
+    border: 1px solid black;
+    color: black;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 100px 10px white;
+    cursor: pointer;
+}
+
+.save-history-rolls {
+    background-color: darkgoldenrod;
+    border: 1px solid black;
+    color: black;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 100px 10px white;
+    cursor: pointer;
+}
+
+.clear-history-rolls:hover, .save-history-rolls:hover {
+    transition: 500ms;
+    box-shadow: 2px 2px 10px white;
+}
+
+.clear-history-rolls:active, .save-history-rolls:active {
+    transition: 0ms;
+    color: white;
+    box-shadow: 0px 0px 0px white;
+}
+
+.dice-dhow-icon {
+    width: 64px;
+}
+
+.dice-dhow-icon-hundred {
+    width: 56px;
+}
+
+.dice-number {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
 }
 
 .container-dice {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
-    border-left: 1px solid black;
+    height: 100%;
     border-right: 1px solid black;
-    border-top: 1px solid black;
     cursor: pointer;
-    background-color: midnightblue;
     color: white;
 }
 
 /*========================Modal*/
+
+.test {
+    width: 0;
+    height: 0;
+}
 
 .modal {
     display: flex;
@@ -161,7 +226,7 @@ header a .create-character {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 36px;
+    height: 40px;
     background-color: lightgray;
     border: 1px solid black;
     border-radius: 5px 5px 0 0;
