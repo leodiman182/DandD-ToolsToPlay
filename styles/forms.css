@@ -69,15 +69,23 @@ header a .create-character {
 
 .main-form {
     margin-top: 20vh;
-    height: 70vh;
+    height: 100%;
+}
+
+.forms-title {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 50%;
     margin: auto;
-    padding-top: 30px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 select, #name-choice, #choose-age, #choose-size {
@@ -172,15 +180,14 @@ select, #name-choice, #choose-age, #choose-size {
 }
 
 /*========================FOOTER*/
-/* 
+
 footer {
     height: 10vh;
     background-color: black;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;      
 }
 
 footer button {
@@ -198,4 +205,4 @@ footer button a {
 
 footer button:hover {    
     opacity: 1;
-} */
+}
